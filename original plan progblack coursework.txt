@@ -1,0 +1,12 @@
+Rough overview of website
+- A website about skydiving
+- This website can detail some of the coolest dropzones in the world and up and coming events at those DZs
+- There is a possiblity that I could sync data from a live, running event calendar for real life events
+- Could possibly have profiles w/ username & password but I'd rather not
+- To extend that, could have access privilleges based on level of skydiver, but again, maybe not
+- For each event / dropzone, users should be able to comment on the picture, either under a chosen username or on their account
+- Can have more than one page, so should have a 'pro-skydivers' page where experienced skydivers can change certain things about the webpage, such as event dates/locations
+
+Technical details
+- Will make use of bootstrap as a front-end framework
+- Will need to ensure that ratios are used instead of pixels for images, for responsiveness on different devices
