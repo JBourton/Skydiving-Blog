@@ -6,7 +6,9 @@ Rough overview of website
 - To extend that, could have access privilleges based on level of skydiver, but again, maybe not
 - For each event / dropzone, users should be able to comment on the picture, either under a chosen username or on their account
 - Can have more than one page, so should have a 'pro-skydivers' page where experienced skydivers can change certain things about the webpage, such as event dates/locations
+- Could have a sign-up lists for events where users can add their names to the list (check for duplicates); can use createElement (example found here: https://durham.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=47570d16-f571-4c0c-8544-af43009558c9)
+
 
 Technical details
 - Will make use of bootstrap as a front-end framework
-- Will need to ensure that ratios are used instead of pixels for images, for responsiveness on different devices
+- Will need to ensure that ratios are used instead of pixels for images, for responsiveness on different devices (note: using bootstrap will help ensure this)
