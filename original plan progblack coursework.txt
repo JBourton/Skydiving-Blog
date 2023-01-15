@@ -8,6 +8,17 @@ Rough overview of website
 - Can have more than one page, so should have a 'pro-skydivers' page where experienced skydivers can change certain things about the webpage, such as event dates/locations
 - Could have a sign-up lists for events where users can add their names to the list (check for duplicates); can use createElement (example found here: https://durham.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=47570d16-f571-4c0c-8544-af43009558c9)
 
+- Could have a drop-down menu where you select a country/Dropzone and information about the DZ is displayed
+- Alongside this, minimum jump requirements etc can be there
+- Then, additional fun/extreme activities to do in the area could be present
+- Comment section below each picture - can connect with web server
+- So one big div container to hold the above
+
+- Could add your name to list of atendees, and essentially have a chat room where you can make plans about sharing accomodation, discuss parachute types etc
+- So if username field is filled, enter button could send data to server, and server would add data to table and respond back
+
+- Include location in google maps if possible for each of these dropzones
+- Could have a user-generated rating for each dropzone - each user is permitted to give 1 thumbs up/down per dropzone
 
 Technical details
 - Will make use of bootstrap as a front-end framework
