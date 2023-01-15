@@ -1,0 +1,28 @@
+For each dropzone, the following data will be presented:
+- Picture of dropzone
+- Location
+- Minimum licence requirement
+- Average weather conditions (often windy, normally sunny etc)
+- Kit rental (y/n) + cost
+- Jump ticket price
+- Comment section (could extend w/ ability to upload media)
+
+Skydive Madrid
+Madrid, Spain
+Include my own pictures
+Ability level for jumping heavily depends on windspeed.
+Located on the outskirts of Madrid
+
+GoSkydive
+Sailsbury, England
+Include my own pictures
+
+SkyHigh Skydiving
+Durham, England
+
+Skydive Belize
+IG: https://www.instagram.com/skydive.belize/?hl=en
+
+Skydive Mexico
+
+Skydive Maldives
