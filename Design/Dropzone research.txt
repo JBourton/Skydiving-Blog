@@ -10,21 +10,32 @@ For each dropzone, the following data will be presented:
 - Comment section (could extend w/ ability to upload media)
 
 Skydive Madrid
-Madrid, Spain
 Like: 
 - Almost always sunny! Jumping all day round, and usually you only have to wait a couple of loads until you can go up again.
 - Small DZ where people know each other well. Makes for chill vibes once the final load has landed and you crack open some beers to watch the last part of sunset.
 Dislike:
 - Shop prices were a bit too high to be reasonable
-- Despite having Madrid in the name, you can barely see Madrid from the sky!
+- Despite having Madrid in the name, you can barely see Madrid from the sky! So don't expect a sweeping view of the city as you climb to altitude, because you won't get it :/
 - Surrounding landscape is a bit dry and brown
 - Landing area outside of the astroturf is hardened mud - if you have a bad landing, it hurts!
 
-Include my own pictures
-Ability level for jumping heavily depends on windspeed.
-Located on the outskirts of Madrid
+Min Licence: If you have an A Licence, you're good to go! Just make sure you're current with your jumps, or else you'll need a retrain!
 
+Equipment rental: Yes. A parachute will set you back €21 per jump, and packing costs €5. There are also weight belts for you to borrow to assist you with your fall rate.
+Ticket prices: €35 for a single ticket, €340 for 10, €825 for 25 or €1550 for 50.
+Weather: This is sunny spain after all, 9 times out of 10 cloud coverage will be insignifcant for at least some skydivers to jump. However, your jump experience may be impacted with high winds. 
+	The higher the windspeed the more experienced of a skydiver you will have to be to be allowed to jump. Exactly what these limits are is chosen by the Jumpmaster on the day.
+
+Contact details:
+- Website: https://www.skydivemadrid.es/en/
+- Email: info@skydivemadrid.es
+- Phone: +34 911299376
+- Instagram: https://www.instagram.com/skydive_madrid/
 Location tag: <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3059.305347487577!2d-3.5021700851861133!3d39.9345590927473!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd420a08b6812e09%3A0x2dd5f57993cb11d6!2sCentro%20de%20Paracaidismo%20Skydive%20MADRID!5e0!3m2!1sen!2suk!4v1673877570148!5m2!1sen!2suk" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+
+
+
+
 
 GoSkydive
 Sailsbury, England
@@ -32,16 +43,33 @@ Like:
 - You can see stonehenge once under canopy! How cool is that!
 - There are some incredibly experienced instructors working there (as of 2020) that are amazing to learn new skills from!
 - Next to an aviation museum with a wealth of history inside of it, that's free to enter as a customer of goskydive, and cheap for all other visitors.
-  If you like planes, then you'll have an amazing time looking around the mueseum. In fact, the dropzone itself was used during WW2 (CHECK INFO)
+  If you like planes, then you'll have an amazing time looking around the mueseum. In fact, the dropzone itself was used during WW2 for some critically important missions, which you can learn about on-site.
+- The surrounding area of Old Sarum is rich in English heratige, which you can explore after your skydive at your leisure. If you're interested in finding out more about Old Sarum, here's an interesting website: https://www.english-heritage.org.uk/visit/places/old-sarum/history/
 Dislike:
 - In our opinion, this DZ was poorly organised and extremley money-oriented
-Location tag: <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2505.335006154199!2d-1.781935284761335!3d51.10227894806426!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4873eeb44e2850a1%3A0xeee833e5e915ba2f!2sGoSkydive!5e0!3m2!1sen!2suk!4v1673877469446!5m2!1sen!2suk" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
 
 Since the summer of 2021 it appears that the DZ have stopped offering standard jump tickets to skydivers, and instead focus primarily on tandem skydives.
 However, if you know the DZ from during the time they ran an AFF course, we belive that it is a possibility you can continue jumping with just an A Licence
 by getting in contact with the company.
 Include my own pictures
-In 2021, a jump ticket cost £25 and gear rental was temporarily free.
+
+Ticket prices & gear rental: In 2021, a jump ticket cost £25 and gear rental was temporarily free. 
+	However, we are almost certain that this is no longer the case, so we cannot provide a price estimate for this dropzone unfortunately.
+	That be said, we do know that GoSkydive have equipment to rent out.
+
+Min licence: We don't think that GoSkydive will be too receptive to A Licence holders here anymore unfortunately. Perhaps if you rock up with your squad, and all of you are realtively experienced sport jumpers, they'll allow you to jump (if you make them look cool ofc, which how could you not with gear as shnazzy as yours (; ) but don't take our word for it!
+
+Weather: yeahhhh... this is a grim one. GoSkydive IS is southern England after all, so what can we expect really, but this DZ has to call off a lot of planes due to poor weather conditions.
+	Sailsbury only gets about 50 days of sun a year, and some of those days are too windy for jumping, so bear that in mind.
+	Our only advice here is go expecting good vibes but not necessarily any jumps, because the people here are chill but the weather is most certainly not. We'll keep our fingers crossed for blue skies for you!
+
+Location tag: <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2505.335006154199!2d-1.781935284761335!3d51.10227894806426!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4873eeb44e2850a1%3A0xeee833e5e915ba2f!2sGoSkydive!5e0!3m2!1sen!2suk!4v1673877469446!5m2!1sen!2suk" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+
+Contact details:
+Website: https://www.goskydive.com/
+Email: info@goskydive.com
+Phone number: 01722 568604
+Instagram: https://www.instagram.com/goskydiveuk/
 
 
 
@@ -51,15 +79,37 @@ SkyHigh Skydiving
 Durham, England
 Like:
 - For starters, it's super near Durham, which means Durham Uni students can go skydiving on the weekends whenever they want - result!
+- The owners of this DZ are pretty passionate about the sport themselves and want to foster the spirit of the super sport of skydiving - they hold events every year such as hot air baloon jumping
+	and cool boogies with much better, open-backed planes. We love to see it!
 Dislike: 
 - Currently only open Friday to Sunday; what if I have a day off during the week and want to jump!? I can't. Noooooooo!!
+- Quite 'out in the sticks' so it will take you a while to get there, especially if you don't have a car (ughhh, worth it though).
 
+Ticket prices / gear rental: A jump ticket costs just £25, which we find to be pretty reasonable. However, weirdly enough, a hop-and-pop from a third of the alititude will cost the exact same price. Hmmmm.
+	Kit hire is £15 which again, we don't feel that you can complain about. It's a decent amount cheaper than the average English dropzone.
+	We'd also like to point out that a coached FS or FF jump will set you back a smooth £60, which could be much worse.
+	Overall, go Durham! We rock your prices!
+
+
+Min licence: An A licence will do you just fine, but remeber, if you haven't jumped in a month you'll need to do a cheeky checkout jump with your instructor just to make sure you remeber the mooooveszz.
+
+Weather: Again with the English dropzones, we really don't be having that smooooth weather. Expect cloudy skies, rain and cancelled jumps reguarly, but at least you'll be in good company waiting around the DZ!
+	One of my favourite previous instructors once told me "you can do a degree in the time you spend waiting around for English weather to clear" and then proceeded to complete an entire music degree, true to his word.
+	So, students, if you're bored and waiting for those clear skies, get out your study books and get to it!
+
+Contact details:
+Website: 0191 517 1234
+Email: info@skyhighskydiving.co.uk
+Phone number:
+Instagram: https://www.instagram.com/sky_high_skydive/
 
 
 
 
 Skydive Belize
+Located in Central America and surrounded by the beatifully biodiverse wonder that is the Carribean sea,
 We normally only talk about solo / team jumps on this website, but we've decided to make an exception with skydive Belize. Although they have in the past ran an annual boogie, we are unsure as to whether it is currently running.
+However, we do belive that it may still be possible to jump solo here, but you will have to pay for the full package (inc. scuba diving and gear drying/cleaning).
 Instead we want to talk about their package detail, which we are sure that all of our adrenaline-seeking readers out there will love the sound of.
 Like: 
 - This is one of the most desirable jumps in the world to make. Looking down from the plane into the deep blue abyss that is the blue hole is sure to make your jaw drop on your heart sing. How beautiful would that be!?
@@ -69,14 +119,23 @@ Dislike:
 - Jumping into the blue hole requires you to perform a water landing. Whilst this is safe enough, with boats on hand ready to pick you up straight after you land in the water, there's a problem.
 	Salt water. Salt water is not at all healthy for your skydiving gear, so after just a few jumps you may need to replace your multi-thousand pound 'chute; no thanks!
 - We mentioned liking that you can jump in flip flops, but the downside to that point is that safety regulations might not be *quite* the same as in Europe - so make sure you know your gear is in tip top condition before you consider jumping here!
-- The price is absolutely eye watering. Understandbly, maybe, because the logistics, permits and equipment involved in this adventure of a lifetime are incredibly expensive for the company, but even so, if this jump is now on your bucket list then
+- The price is enough to send shudders down your spine. Understandbly, maybe, because the logistics, equipment and permits (*COUGH*COUGH*bribes*COUGH) involved in this adventure of a lifetime are incredibly expensive for the company, but even so, if this jump is now on your bucket list then
 	start saving now!
-IG: https://www.instagram.com/skydive.belize/?hl=en
+
+Min licence: It doesn't acutally say on their website, but let's be honest here, there's no way their letting you jump solo with any less than 200 jumps and a C Licence. This is an objectively difficult and dangerous jump, and you'll need to have 
+	your water training certification and much skill to even think about attempting it.
+	If they let you jump on any less than a C Licence then we advise that you get the hell out of there, fast! Because DZs that actually follow saftey regulations ARE cool, remember guys!
+
+Price: For a solo jump, with scuba diving and gear maintinence after, we believe the cost is currently set at an eye watering $2200 per jump. If you can afford that then you're in for the jump of a lifetime - if not, I feel you man (*cries in poor student*).
+
 Image by <a href="https://www.freepik.com/free-photo/turquoise-blue-texture-fluid-background-with-bubble_4298910.htm#query=belize%20blue%20hole&position=3&from_view=search&track=ais">Freepik</a>
 <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3796.3175436247034!2d-87.96727838572006!3d17.917337292021447!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8f5c9ba0dc9d9121%3A0x7da17219be53e7ea!2sSan%20Pedro%20Airport!5e0!3m2!1sen!2suk!4v1673880272258!5m2!1sen!2suk" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
 
+Website: https://www.skydivebelize.com/
+Email: N/A
+Phone: N/A
+Instagram: https://www.instagram.com/skydive.belize/?hl=en
 
-Skydive Mexico
 
 Skydive Maldives
 Maldives
@@ -87,8 +146,52 @@ Like:
 Dislike:
 - 200 skydives is a pretty high jump; this place is only for the experienced
 - Expensive. The dropzone and the surrounding area will burn a whole in all but the most wealthy skydivers out there :/
+- So logicistically it's gonna be a hard one getting together the whole squad for a cheeky maldives trip, but if you can, the reward is absolute eye candy from above!
+
+Jump ticket costs: Bit of a weird one here. It looks like this DZ mainly focuses on offering tandem skydives so if you just rock up by yourself they're not gonna have a nice warm seat ready for just you unfortunately (awwww).
+	However, all is not lost! If you have a squad of 5 or more people then you can buy jump tickets at $252/pp, which is way above the usual price but perhaps worth it for that island viewwww babyyyy.
+	Even better, if you can manage to get a squad of 16 very sane people who enjoy jumping out of perfectly good aeroplanes with you for fun, then a ticket will cost you $79/pp - that's sounding much better!
+Equipment rental: We found no trace of this DZ offering equipment rental, so we're gonna go ahead and say nah, they don't offer any.
+
+Minimum licence requirement: A B-licence, minimum of 200 jumps AND water training is needed to jump here. It's not a DZ for begginers by any means, but hey, if you're new to the sport then you have trips like this one to look forward to in the future!
+
+Weather: As long as you avoid the wet season (May to November) you are all set for blue skies and sound vibes, free falling over this beautiful island nation. Nice!
 
 Photo by <a href="https://unsplash.com/@seefromthesky?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Ishan @seefromthesky</a> on <a href="https://unsplash.com/s/photos/maldives?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
-  
+
+
+Contact details:
+- Website: http://joomla.kandima.com/index.php/en/kool-things/sky-diving
+- Email: N/A
+- Phone: +960 992-2422
+- Instagram: https://www.instagram.com/skydive_maldives/
+
+Location: <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15958.092625645282!2d73.154111!3d-0.69694!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xdfe1ee1fd8e4dab1!2sSkydiving%20Maldives!5e0!3m2!1sen!2suk!4v1673953741405!5m2!1sen!2suk" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+
+
 
 Skydive Egypt
+This one has got to be the ultimate skydive OF ALL TIME. You have the opportunity to skydive over the Great Pyramids of Giza. Like, what!? This is a thing!
+Like:
+- Seeing the Great Pyramids of Giza is a bucket list thing for many of us, but having the opportunity to skydive over them takes it to a whole other level!
+- Once you land (in front of the Pyramids!) you will be picked up by a camel and taken back to the DZ. Awesome!
+- The aircraft you're jumping from will be a super cool millitary-operated Hercules C-130, which is perhaps one of the coolest planes any skydiver could jump out of. Get you're best Tom Cruise impression ready and prepare for a tactical mission over the Pyramids!
+
+
+Minimum jump requirements: You will need a minimum of 100 jumps and a B Licence to jump here, which honestly we find to be a pretty reasonable requirement. 
+Even from complete begginer level having done no jumps, and in the right location, with the right instructors you can get up to that number in a couple weeks no problem. Egypt here you come!
+
+
+Average weather conditions: It's in the middle of a desert, so we're fairly certain that you have a good chance of sun and clear skies here!
+
+Price: You'll be paying between $2000-$2800 per solo skydive, so this is definitely not a jump for the faint of wallet!
+	However, this does include hotel accomodation (in a pretty sweet hotel if we don't say so ourself), meals and ground transfer around egypt.
+Equipment rental: No. You will need to bring equipment from home.
+
+<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3456.0403634662775!2d31.131160014518777!3d29.978269978651834!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14584587ac8f291b%3A0x810c2f3fa2a52424!2sThe%20Great%20Pyramid%20of%20Giza!5e0!3m2!1sen!2suk!4v1673883052227!5m2!1sen!2suk" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+
+Contacts:
+- Website: https://skydivehigh.com/skydive-egypt/
+- Phone: 800-644-7382
+- Email: info@incredible-adventures.com
+- Instagram: https://www.instagram.com/skydiveegypt/?hl=en
