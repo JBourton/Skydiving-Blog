@@ -1,0 +1,18 @@
+With thanks to https://www.happyhues.co/palettes/11 for the colour scheme inspiration
+
+- For the background I will be using #f9f4ef
+- For the main block of the website (that displays the dropzone) I will be using #fffffe
+- For the Likes and Dislikes labels, I could get rid of the images and change the font to a spaced cursive font in all caps
+	These could then be in the dark #8c7851 colour.
+	Alternativley, likes and dislikes could be in the highlight #f25042 colour and all other subheadings could be in the highlight font #8c7851
+- Buttons can be in the same #8c7851 colour
+- Text can be in #eaddcf
+
+
+The red would like nice complementing the title of the webpage. Anything important can be with red added in.
+White can be used only for the DZ box. The border of the box can be a few pixels thick with #020826
+
+So headings and title in the highlight colour, text in the secondary colour
+Main background and DZ box background decided.
+
+Button colour subtly different to other colours but fits in with colour scheme well.
