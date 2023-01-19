@@ -1,15 +1,17 @@
+/* The idea is to have the background part white and the inside part off-white */
 * {
-    padding: 0;
-    margin: 0;
-    font-family: monospace;
     background-color: #f9f4ef;
 }
 
-div {
+/*Implementation of the dropdown menu has been modified from the original source code by HowToCodeSchool found at https://youtu.be/eKo1NV1qxbc*/
+.dropdown {
+    padding: 0;
+    margin: 0;
     background-color: #fff;
+    text-align: center;
 }
 
-ul.dropdown {
+ul {
     list-style: none;
     background: #8c7851;
 }
@@ -17,7 +19,6 @@ ul.dropdown {
 ul li {
     display: inline-block;
     position: relative;
-    display: block;
 }
 
 
@@ -30,7 +31,27 @@ ul li a {
     font-size: 20px;
 }
 
+ul.dropdown_menu li {
+    display: block;
+}
+
+ul.dropdown_menu {
+    width: 100%;
+    background: #8c7851;
+    position: absolute;
+    z-index: 999;
+    display: none;
+}
+
+ul.dropdown_menu li button:hover {
+    background: #8c7851;
+}
+
+ul.dropdown_menu li:hover {
+    display: block;
+}
+
 #title {
     text-align: center;
-    color: red;
+    color: #8c7851;
 }

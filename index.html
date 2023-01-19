@@ -13,25 +13,29 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
 </head>
 <body>
-    <h1 id="title">Skyfly</h1>
-
     <!--The dropdown menu to allow the user to select a dropzone-->
     <div class="jumbotron">
-        <ul class="dropdown">
-            <li><button>Skydive Madrid</button></li>
-            <li><button>GoSkydive</button></li>
-            <li><button>SkyHigh</button></li>
-            <li><button>Skydive Egypt</button></li>
-            <li><button>Skydive Belize</button></li>
-            <li><button>Skydive Maldives</button></li>
-        </ul>
-    </div>
+        <h1 id="title">Placeholder Title</h1>
+        <!--Implementation of the dropdown menu has been modified from the original source code by HowToCodeSchool found at https://youtu.be/eKo1NV1qxbc-->
+        <div class="dropdown">
+            <button>Select a dropzone ▼</button>
+            <ul class="dropdown_menu">
+                <li><button>Skydive Madrid</button></li>
+                <li><button>GoSkydive</button></li>
+                <li><button>SkyHigh</button></li>
+                <li><button>Skydive Egypt</button></li>
+                <li><button>Skydive Belize</button></li>
+                <li><button>Skydive Maldives</button></li>
+            </ul>
+        </div>
 
-    <!--The container that holds the results of fetching information about a dropzone-->
-    <div class="jumbotron"></div>
+        <!--The container that holds the results of fetching information about a dropzone-->
+        <div class="dropzones"></div>
 
-    <!--The comment section-->
-    <div class="jumbotron"></div>
+        <!--The comment section-->
+        <div class="comments"></div>
+        
+    </div> 
 
     <!-- Latest compiled and minified JavaScript -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
