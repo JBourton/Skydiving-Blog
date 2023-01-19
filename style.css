@@ -1,0 +1,36 @@
+* {
+    padding: 0;
+    margin: 0;
+    font-family: monospace;
+    background-color: #f9f4ef;
+}
+
+div {
+    background-color: #fff;
+}
+
+ul.dropdown {
+    list-style: none;
+    background: #8c7851;
+}
+
+ul li {
+    display: inline-block;
+    position: relative;
+    display: block;
+}
+
+
+ul li a {
+    display: block;
+    padding: 20px 25px;
+    color: #eaddcf;
+    text-decoration: none;
+    text-align: center;
+    font-size: 20px;
+}
+
+#title {
+    text-align: center;
+    color: red;
+}
