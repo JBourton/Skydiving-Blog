@@ -30,3 +30,5 @@ What if the comment section is underneath the DZ div? Then the 2 entities can be
 
 I would like the width of the DZ div and comment section to take up 10/12 of the screen.
 There will be a gap in between that div and comments.
+
+This gist contains an example of how to make the webapge more responsible (at the bottom of the CSS): https://gist.github.com/bmcculley/361a970dbe18a0b440d2df256e33efaa
