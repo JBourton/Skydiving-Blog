@@ -32,3 +32,4 @@ I would like the width of the DZ div and comment section to take up 10/12 of the
 There will be a gap in between that div and comments.
 
 This gist contains an example of how to make the webapge more responsible (at the bottom of the CSS): https://gist.github.com/bmcculley/361a970dbe18a0b440d2df256e33efaa
+The version of the code as of 19/01/23 uses the example code found here: https://www.codeply.com/go/bp/YhWhOlLPR0 for organising bootstrap grid

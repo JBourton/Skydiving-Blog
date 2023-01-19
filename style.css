@@ -1,5 +1,9 @@
 /* The idea is to have the background part white and the inside part off-white */
 * {
+    padding: 10px 0 10px 0;
+}
+
+div {
     background-color: #f9f4ef;
 }
 
@@ -12,4 +16,16 @@
     text-align: center;
     background-color: #fff;
     font-size: 20px;
+}
+
+footer {
+    padding-left: 25px;
+}
+
+.col-md-6 {
+    background-color: #fff;
+}
+
+.heading {
+    margin: 0 25px 25px 25px;
 }
