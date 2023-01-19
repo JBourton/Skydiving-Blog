@@ -23,3 +23,10 @@ Rough overview of website
 Technical details
 - Will make use of bootstrap as a front-end framework
 - Will need to ensure that ratios are used instead of pixels for images, for responsiveness on different devices (note: using bootstrap will help ensure this)
+
+Can also have an 'add events' section for each DZ.
+
+What if the comment section is underneath the DZ div? Then the 2 entities can be loaded more suitably for the task.
+
+I would like the width of the DZ div and comment section to take up 10/12 of the screen.
+There will be a gap in between that div and comments.
