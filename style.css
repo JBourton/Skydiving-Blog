@@ -3,55 +3,13 @@
     background-color: #f9f4ef;
 }
 
-/*Implementation of the dropdown menu has been modified from the original source code by HowToCodeSchool found at https://youtu.be/eKo1NV1qxbc*/
-.dropdown {
-    padding: 0;
-    margin: 0;
-    background-color: #fff;
-    text-align: center;
-}
-
-ul {
-    list-style: none;
-    background: #8c7851;
-}
-
-ul li {
-    display: inline-block;
-    position: relative;
-}
-
-
-ul li a {
-    display: block;
-    padding: 20px 25px;
-    color: #eaddcf;
-    text-decoration: none;
-    text-align: center;
-    font-size: 20px;
-}
-
-ul.dropdown_menu li {
-    display: block;
-}
-
-ul.dropdown_menu {
-    width: 100%;
-    background: #8c7851;
-    position: absolute;
-    z-index: 999;
-    display: none;
-}
-
-ul.dropdown_menu li button:hover {
-    background: #8c7851;
-}
-
-ul.dropdown_menu li:hover {
-    display: block;
-}
-
 #title {
     text-align: center;
     color: #8c7851;
+}
+
+.dropdown_menu {
+    text-align: center;
+    background-color: #fff;
+    font-size: 20px;
 }

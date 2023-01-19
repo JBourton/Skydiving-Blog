@@ -17,16 +17,17 @@
     <div class="jumbotron">
         <h1 id="title">Placeholder Title</h1>
         <!--Implementation of the dropdown menu has been modified from the original source code by HowToCodeSchool found at https://youtu.be/eKo1NV1qxbc-->
-        <div class="dropdown">
-            <button>Select a dropzone ▼</button>
-            <ul class="dropdown_menu">
-                <li><button>Skydive Madrid</button></li>
-                <li><button>GoSkydive</button></li>
-                <li><button>SkyHigh</button></li>
-                <li><button>Skydive Egypt</button></li>
-                <li><button>Skydive Belize</button></li>
-                <li><button>Skydive Maldives</button></li>
-            </ul>
+        <div class="dropdown_menu">
+            <label for="dropdown">Select a dropzone</label>
+            <select name="dropdown" id="dropdown">
+                <option value="none"></option>
+                <option value="skydive_madrid">Skydive Madrid</option>
+                <option value="goskydive">GoSkydive</option>
+                <option value="skyhigh">SkyHigh</option>
+                <option value="skydive_egypt">Skydive Egypt</option>
+                <option value="skydive_belize">Skydive Belize</option>
+                <option value="skydive_maldives">Skydive Maldives</option>
+            </select>
         </div>
 
         <!--The container that holds the results of fetching information about a dropzone-->
