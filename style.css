@@ -7,7 +7,7 @@ div {
     background-color: #f9f4ef;;
 }
 
-#title {
+.title {
     text-align: center;
     color: #8c7851;
 }
@@ -45,4 +45,9 @@ footer {
     background-color: #fff;
     padding: 0;
     border: 1px solid #000;
+}
+
+body {
+    margin: 0;
+    padding: 0;
 }
