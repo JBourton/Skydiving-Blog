@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/JBourton/progblack-web-dev-coursework-/issues"
   },
-  "homepage": "https://github.com/JBourton/progblack-web-dev-coursework-#readme"
+  "homepage": "https://github.com/JBourton/progblack-web-dev-coursework-#readme",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
 }
