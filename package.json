@@ -1,0 +1,20 @@
+{
+  "name": "progblack-web-dev-coursework-",
+  "version": "1.0.0",
+  "description": "Programming black coursework content",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JBourton/progblack-web-dev-coursework-.git"
+  },
+  "author": "Joshua Bourton",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JBourton/progblack-web-dev-coursework-/issues"
+  },
+  "homepage": "https://github.com/JBourton/progblack-web-dev-coursework-#readme"
+}
