@@ -33,3 +33,8 @@ There will be a gap in between that div and comments.
 
 This gist contains an example of how to make the webapge more responsible (at the bottom of the CSS): https://gist.github.com/bmcculley/361a970dbe18a0b440d2df256e33efaa
 The version of the code as of 19/01/23 uses the example code found here: https://www.codeply.com/go/bp/YhWhOlLPR0 for organising bootstrap grid
+
+When passing a string into the Dropzone object constructor, I could, instead of just a normal string, pass in raw html such that it is rendered on the client side.
+This would avoid messy strings and weird splicing techniques trying to send the data across, and instead package it up nicely.
+
+A 'suggest an edit' section for each dropzone could come in handy with sending/requesting data from server.
