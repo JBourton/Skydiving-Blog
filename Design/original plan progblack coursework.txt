@@ -38,3 +38,13 @@ When passing a string into the Dropzone object constructor, I could, instead of 
 This would avoid messy strings and weird splicing techniques trying to send the data across, and instead package it up nicely.
 
 A 'suggest an edit' section for each dropzone could come in handy with sending/requesting data from server.
+
+Unsure as to whether javascript dropzone objects should be stored as JSON, or should be created as JS and sent as JSON.
+We could have seperate json files for each dropzone, and fetch the entire JSON file when needed.
+This would work based of the example found here: https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Objects/JSON and is as follows:
+async function name():
+	const requestURL depending on button click;
+	const request = new Request(requestURL);
+	
+	const response = await fetch(request);
+	const dropzones = await response.json();

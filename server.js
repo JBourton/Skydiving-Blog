@@ -1,3 +1,6 @@
+// Local IP
+const adress = 'http://127.0.0.1:8080/';
+
 // Server setup
 const express = require('express');
 const app = express();
