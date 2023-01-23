@@ -110,7 +110,7 @@ Instagram: https://www.instagram.com/sky_high_skydive/
 
 Location: <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d9207.471576857091!2d-1.3877422!3d54.7647094!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xb6365e0321403ea1!2sSky-High%20Skydiving!5e0!3m2!1sen!2suk!4v1674502179866!5m2!1sen!2suk" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
 
-
+Photo by <a href="https://unsplash.com/@kamilpphotos?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Kamil Pietrzak</a> on <a href="https://unsplash.com/s/photos/dropzone?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
 
 
 Skydive Belize
@@ -197,6 +197,8 @@ Price: You'll be paying between $2000-$2800 per solo skydive, so this is definit
 Equipment rental: No. You will need to bring your own equipment from home unfortunately. You could also rent some before you leave for Egypt.
 
 <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3456.0403634662775!2d31.131160014518777!3d29.978269978651834!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14584587ac8f291b%3A0x810c2f3fa2a52424!2sThe%20Great%20Pyramid%20of%20Giza!5e0!3m2!1sen!2suk!4v1673883052227!5m2!1sen!2suk" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+
+Photo by <a href="https://unsplash.com/@8moments?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Simon Berger</a> on <a href="https://unsplash.com/photos/QxPNDh0_5EQ?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
 
 Contacts:
 - Website: https://skydivehigh.com/skydive-egypt/
