@@ -1,24 +1,30 @@
+// Server setup
 const express = require('express');
 const app = express();
 app.use(express.static('client'));
 
-const dropzone = {
-    name: 'dz name',
-    img_url: '/',
-    img_description: 'description of img',
-    likes: 'what we like',
-    dislikes: 'what we dislike',
-    kit_rental: true,
-    ticket_cost: 'plane ticket cost',
-    avg_weather: 'average weather conditions',
-    min_licence: 'minimum licence requirements to jump',
-    location_label: 'description of location',
-    location_src: 'the src code for <iframe> to render location on google maps',
-    dz_contacts: 'the dz contact details'
+// Object template to hold the necessary fields for filling in the information box central to website
+function Dropzone(name, url, img_lbl, likes, dislikes, kit, ticket_cost, weather, licence, location_lbl, location_src, contacts) {
+    this.name = name;
+    this.img_url = url;
+    this.img_description = this.img_description;
+    this.likes = likes;
+    this.dislikes = dislikes;
+    this.kit_rental = kit;
+    this.ticket_cost = ticket_cost;
+    this.avg_weather = weather;
+    this.min_licence = licence;
+    this.location_lbl = location_lbl;
+    this.location_src = location_src;
+    this.dz_contacts = contacts;
 }
 
+
+// Get request
 app.get('/dropzone', function(req, resp){
     resp.send('hi')
 })
 
+
+// Listen on port 8080
 app.listen(8080);
