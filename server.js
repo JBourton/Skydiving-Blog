@@ -15,7 +15,7 @@ function Dropzone(name, url, img_lbl, likes, dislikes, kit, ticket_cost, weather
     this.dislikes = dislikes;
     this.kit_rental = kit;
     this.ticket_cost = ticket_cost;
-    this.avg_weather = weather;
+    this.weather = weather;
     this.min_licence = licence;
     this.location_lbl = location_lbl;
     this.location_src = location_src;
