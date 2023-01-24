@@ -56,6 +56,8 @@ async function fetch_json(requestURL) {
 
     const response = await fetch(request);
     const retrievedDropzone = await response.json();
+
+    populate_jumbotron(retrievedDropzone);
 }
 
 // Populate dropzone div with object content retrieved from JSON file
@@ -64,7 +66,7 @@ function populate_jumbotron(retreivedDropzone) {
 
     document.getElementById('dz_img').src = retrievedDropzone.img_url;
 
-    // popualte likes / dislikes list
+    // populate likes / dislikes list
 
     document.getElementById('kit_rental').innerHTML = retreivedDropzone.kit_rental;
     document.getElementById('ticket_cost').innerHTML = retrievedDropzone.ticket_cost;
