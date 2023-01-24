@@ -53,4 +53,14 @@ body {
 
 #dz_selector {
     margin-left: 20px;
+    transition-duration: 0.4s;
+    background-color: #8c7851;
+    color: #fffffe;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+#dz_selector:hover {
+    background-color: #fffffe;
+    color: #8c7851;
 }

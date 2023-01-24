@@ -1,22 +1,10 @@
-// Local IP
-const adress = 'http://127.0.0.1:8080/';
-
-// Server setup
-const express = require('express');
-const app = express();
-app.use(express.static('client'));
-
-// Get request
-app.get('/dropzone', function(req, resp){
-    resp.send('hi')
-})
-
-// Listen on port 8080
-app.listen(8080);
-
 // Add event listener to search button that displays information on selected dropzone
 const search = document.getElementById("dz_selector");
-search.addEventListener("click", display_dropzone);
+search.addEventListener("click", display_pasta);
+
+function display_pasta {
+    alert("Ooh I love pasta me")
+}
 
 // With thanks to the MDN web docs page found here: https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Objects/JSON for an overview of how to implement this
 function display_dropzone() {
@@ -62,26 +50,42 @@ async function fetch_json(requestURL) {
 
 // Populate dropzone div with object content retrieved from JSON file
 function populate_jumbotron(retreivedDropzone) {
-    document.getElementById('title').innerHTML += retrievedDropzone.name;
-
+    // Populate name and image fields
+    document.getElementById('title').innerHTML = 'Dropzone name: ' + retrievedDropzone.name;
     document.getElementById('dz_img').src = retrievedDropzone.img_url;
 
-    // populate likes / dislikes list
+    // Populate likes / dislikes lists
+    document.getElementById('likes').innerHTML = retrievedDropzone.likes;
+    document.getElementById('dislikes').innerHTML = retreivedDropzone.dislikes
 
+    // Populate dz information
     document.getElementById('kit_rental').innerHTML = retreivedDropzone.kit_rental;
     document.getElementById('ticket_cost').innerHTML = retrievedDropzone.ticket_cost;
     document.getElementById('weather').innerHTML = retrievedDropzone.weather;
     document.getElementById('licence').innerHTML = retrievedDropzone.min_licence;
 
-    document.getElementById('location_lbl').innerHTML += retrievedDropzone.location_lbl;
+    // Populate location fields
+    document.getElementById('location_lbl').innerHTML = 'Location: ' + retrievedDropzone.location_lbl;
     document.getElementById('location').src = retreivedDropzone.location_src;
 
-    // populate contacts list
+    // Populate contacts list
+    document.getElementById('contacts').innerHTML = retreivedDropzone.dz_contacts
 }
 
+/*
+// Local IP
+const adress = 'http://127.0.0.1:8080/';
 
-// Could remove <ul> part from json code
+// Server setup
+const express = require('express');
+const app = express();
+app.use(express.static('client'));
 
-// As shown in the article, I now need some functions to call inside of fetch_json() that will populate the DOM with the relevant JSON object
-// I may also need to define the data structure in the JSON object w/ the previously used JS code (in txt file)
-// The object should actually have already been converted to js inside the fetch_json() function as retreivedDropzone
+// Get request
+app.get('/dropzone', function(req, resp){
+    resp.send('hi')
+})
+
+// Listen on port 8080
+app.listen(8080);
+*/
