@@ -41,7 +41,7 @@
     
                 <!--The container that holds the results of fetching information about a dropzone-->
                 <div class="jumbotron">
-                    <p>Dropzone Name:</p>
+                    <p id="title">Dropzone Name: </p>
                     <!--The src will be changed via a GET request to display the image relating to the selected dropzone-->
                     <img src="" alt="" id="dz_img">
                     <label for="dz_img">Description of image</label>
@@ -49,11 +49,15 @@
                     <ul></ul>
                     <h3>Dislikes</h3>
                     <ul></ul>
-                    <p>Kit rental:</p>
-                    <p>Plane ticket cost:</p>
-                    <p>Average weather conditions:</p>
-                    <p>Minimum licence requirement:</p>
-                    <label for="location">Location:</label>
+                    <h5>Kit rental:</h5>
+                    <p id="kit_rental"></p>
+                    <h5>Plane ticket cost:</h5>
+                    <p id="ticket_cost"></p>
+                    <h5>Average weather conditions:</h5>
+                    <p id="weather"></p>
+                    <h5>Minimum licence requirements:</h5>
+                    <p id="licence"></p>
+                    <label id="location_lbl" for="location">Location: </label>
                     <iframe src="" frameborder="0" id="location"></iframe>
                     <p>DZ contact details:</p>
                     <ul></ul>
