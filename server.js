@@ -7,26 +7,27 @@ function display_dropzone() {
     // Fetch value of dropzone name selected by user
     requestURL = null
     var selectedDz = document.getElementById('dropdown').value;
-    switch(expression) {
+    switch(selectedDz) {
         case selectedDz = 'skydive_madrid':
-        requestURL = '/JSONdropzones/madrid.json'
-        break;
+            requestURL = '../JSONdropzones/madrid.json'
+            break;
         case selectedDz = 'goskydive':
-            requestURL = '/JSONdropzones/sailsbury.json'
-        break;
+            requestURL = '../JSONdropzones/sailsbury.json'
+            break;
         case selectedDz = 'skyhigh':
-            requestURL = '/JSONdropzones/durham.json'
+            requestURL = '../JSONdropzones/durham.json'
             break;
         case selectedDz = 'skydive_egypt':
-            requestURL = '/JSONdropzones/egypt.json'
+            requestURL = '../JSONdropzones/egypt.json'
             break;
         case selectedDz = 'skydive_belize':
-            requestURL = '/JSONdropzones/belize.json'
+            requestURL = '../JSONdropzones/belize.json'
             break;
         case selectedDz = 'skydive_maldives':
-            requestURL = '/JSONdropzones/maldives.json'
+            requestURL = '../JSONdropzones/maldives.json'
             break;
     }
+
 
     if (requestURL !== null) {
         fetch_json(requestURL)
@@ -35,37 +36,51 @@ function display_dropzone() {
 }
 
 async function fetch_json(requestURL) {
-    // Fill webpage with data from JSON file
+    // Gather details about selected dropzone from JSON file
     const request = new Request(requestURL)
 
     const response = await fetch(request);
     const retrievedDropzone = await response.json();
 
+    const title = 'Dropzone name: ' + retrievedDropzone.name;
+    alert(title);
+    // Fill webpage with data from JSON file
     populate_jumbotron(retrievedDropzone);
+
+    alert('hi');
 }
 
 // Populate dropzone div with object content retrieved from JSON file
-function populate_jumbotron(retreivedDropzone) {
+function populate_jumbotron(retrievedDropzone) {
+    // Problem with this line; working in upper function
+    alert(retrievedDropzone);
+    alert(retrievedDropzone.name);
+    alert('hi');
+
+
     // Populate name and image fields
-    document.getElementById('title').innerHTML = 'Dropzone name: ' + retrievedDropzone.name;
+    const title = 'Dropzone name: ' + retrievedDropzone.name;
+    alert(title);
+
+    document.getElementById('title').innerHTML = title
     document.getElementById('dz_img').src = retrievedDropzone.img_url;
 
     // Populate likes / dislikes lists
     document.getElementById('likes').innerHTML = retrievedDropzone.likes;
-    document.getElementById('dislikes').innerHTML = retreivedDropzone.dislikes
+    document.getElementById('dislikes').innerHTML = obj.dislikes
 
     // Populate dz information
-    document.getElementById('kit_rental').innerHTML = retreivedDropzone.kit_rental;
+    document.getElementById('kit_rental').innerHTML = obj.kit_rental;
     document.getElementById('ticket_cost').innerHTML = retrievedDropzone.ticket_cost;
     document.getElementById('weather').innerHTML = retrievedDropzone.weather;
     document.getElementById('licence').innerHTML = retrievedDropzone.min_licence;
 
     // Populate location fields
     document.getElementById('location_lbl').innerHTML = 'Location: ' + retrievedDropzone.location_lbl;
-    document.getElementById('location').src = retreivedDropzone.location_src;
+    document.getElementById('location').src = obj.location_src;
 
     // Populate contacts list
-    document.getElementById('contacts').innerHTML = retreivedDropzone.dz_contacts
+    document.getElementById('contacts').innerHTML = obj.dz_contacts
 }
 
 /*
