@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Skyfly</title>
     <link rel="stylesheet" href="style.css">
-    <!--Bootstrap code used in this website is located here: https://getbootstrap.com/docs/3.3/getting-started/-->
+    <!-- Bootstrap code used in this website is located here: https://getbootstrap.com/docs/3.3/getting-started/ -->
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <!-- Optional theme -->
@@ -23,7 +23,7 @@
     <div class="row">
         <div class="container vertical-center">
             <div class="col-md-6 col-md-offset-3">
-                <!--The dropdown menu to allow the user to select a dropzone-->
+                <!-- The dropdown menu to allow the user to select a dropzone -->
                 <div class="dz_selection">
                     <div class="dropdown_menu">
                         <label for="dropdown">Select a dropzone</label>
@@ -40,27 +40,27 @@
                     </div>
                 </div>
     
-                <!--The container that holds the results of fetching information about a dropzone-->
+                <!-- The container that holds the results of fetching information about a dropzone -->
                 <div class="jumbotron">
                     <p id="title">Dropzone Name: </p>
-                    <!--The src will be changed via a GET request to display the image relating to the selected dropzone-->
+                    <!-- The src will be changed via a GET request to display the image relating to the selected dropzone -->
                     <img src="" alt="" id="dz_img">
                     <label for="dz_img">Description of image</label>
-                    <h3>Likes</h3>
+                    <h4>Likes</h4>
                     <ul id="likes"></ul>
-                    <h3>Dislikes</h3>
+                    <h4>Dislikes</h4>
                     <ul id="dislikes"></ul>
-                    <h5>Kit rental:</h5>
+                    <h4>Kit rental:</h4>
                     <p id="kit_rental"></p>
-                    <h5>Plane ticket cost:</h5>
+                    <h4>Plane ticket cost:</h4>
                     <p id="ticket_cost"></p>
-                    <h5>Average weather conditions:</h5>
+                    <h4>Average weather conditions:</h4>
                     <p id="weather"></p>
-                    <h5>Minimum licence requirements:</h5>
+                    <h4>Minimum licence requirements:</h4>
                     <p id="licence"></p>
                     <label id="location_lbl" for="location">Location: </label>
                     <iframe src="" frameborder="0" id="location"></iframe>
-                    <p>DZ contact details:</p>
+                    <h4>DZ contact details:</h4>
                     <ul id="contacts"></ul>
                 </div>
     
@@ -81,7 +81,10 @@
     </div>
     
 
-    <!-- Latest compiled and minified JavaScript -->
+    <!-- Latest compiled and minified JavaScript for bootstrap -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    
+    <!-- Server-side javascript code -->
+    <script src='../../server.js'></script>
 </body>
 </html>

@@ -1,10 +1,6 @@
 // Add event listener to search button that displays information on selected dropzone
-const search = document.getElementById("dz_selector");
-search.addEventListener("click", display_pasta);
-
-function display_pasta {
-    alert("Ooh I love pasta me")
-}
+const search = document.querySelector('#dz_selector');
+search.addEventListener('click', display_dropzone);
 
 // With thanks to the MDN web docs page found here: https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Objects/JSON for an overview of how to implement this
 function display_dropzone() {
