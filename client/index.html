@@ -36,7 +36,7 @@
                             <option value="skydive_belize">Skydive Belize</option>
                             <option value="skydive_maldives">Skydive Maldives</option>
                         </select>
-                        <button id="dz_selector">Search</button>
+                        <button class="custom_btn">Search</button>
                     </div>
                 </div>
     
@@ -66,7 +66,18 @@
     
                 <!--The comment section-->
                 <div class="comments">
-                    <p>[Placeholder comment section]</p>
+                    <!-- Implementation of comment section based off of youtube tutorial by Mr. Web Designer found here: https://www.youtube.com/watch?v=vsycEiO6Itc -->
+                    <div class="comment_inputs">
+                        <input type="text" name="comment_field" id="comment_field" placeholder="Add comment...">
+                        <button class="custom_btn">Submit</button>
+                        <button class="custom_btn">Cancel</button>
+                    </div>
+                    
+                    <div class="commentbox_container">
+                        <div class="comment_box"></div>
+                        <br>
+                        <button class="custom_btn">Delete</button>
+                    </div>   
                 </div>  
             </div>
         </div>
