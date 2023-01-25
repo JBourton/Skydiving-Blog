@@ -9,10 +9,10 @@ function display_dropzone() {
     var selectedDz = document.getElementById('dropdown').value;
     switch(selectedDz) {
         case selectedDz = 'skydive_madrid':
-            requestURL = '../JSONdropzones/madrid.json'
+            requestURL = '/JSONdropzones/madrid.json'
             break;
         case selectedDz = 'goskydive':
-            requestURL = '../JSONdropzones/sailsbury.json'
+            requestURL = '/JSONdropzones/sailsbury.json'
             break;
         case selectedDz = 'skyhigh':
             requestURL = '../JSONdropzones/durham.json'
@@ -42,21 +42,7 @@ async function fetch_json(requestURL) {
     const response = await fetch(request);
     const retrievedDropzone = await response.json();
 
-    const title = 'Dropzone name: ' + retrievedDropzone.name;
-    alert(title);
-    // Fill webpage with data from JSON file
-    populate_jumbotron(retrievedDropzone);
-
-    alert('hi');
-}
-
-// Populate dropzone div with object content retrieved from JSON file
-function populate_jumbotron(retrievedDropzone) {
-    // Problem with this line; working in upper function
-    alert(retrievedDropzone);
-    alert(retrievedDropzone.name);
-    alert('hi');
-
+    alert(retrievedDropzone.img_url);
 
     // Populate name and image fields
     const title = 'Dropzone name: ' + retrievedDropzone.name;
@@ -81,6 +67,11 @@ function populate_jumbotron(retrievedDropzone) {
 
     // Populate contacts list
     document.getElementById('contacts').innerHTML = obj.dz_contacts
+}
+
+// Populate dropzone div with object content retrieved from JSON file
+function populate_jumbotron(retreivedDropzone) {
+    
 }
 
 /*
