@@ -28,14 +28,31 @@ u {
 }
 
 /* Style dropzone selection */
-.dropdown_menu {
-    text-align: center;
-    background-color: #fffffe;
-    font-size: 20px;
-}
-
 .dz_selection {
     padding: 0;
+    width: 90%;
+}
+
+.dropdown_menu {
+    background-color: #fffffe;
+    font-size: 20px;
+    color: #8c7851;
+}
+
+#dropdown {
+    width: 60%;
+    position: relative;
+    height: 5rem;
+}
+
+#dropdown_lbl {
+    padding-right: 2rem;
+}
+
+
+#dz_selector {
+    position: absolute;
+    right: 2.5%;
 }
 
 .custom_btn {
@@ -46,6 +63,7 @@ u {
     padding: 5px 10px;
     border-radius: 5px;
     box-shadow: 0 0.5px 1px #8c7851;
+    height: 5rem;
 }
 
 .custom_btn:hover {
@@ -54,7 +72,7 @@ u {
 }
 
 /* Style bootstrap content */
-.col-md-6 {
+.col-md-8 {
     background-color: #fff;
 }
 
@@ -74,6 +92,17 @@ u {
 /* Style displayed contents of JSON dropzone object */
 .indent {
     padding-left: 5%;
+}
+
+#location_container {
+    text-align: center;
+    height: 60vh;
+}
+
+#location {
+    display: inline-block;
+    width: 90%;
+    height: 90%;
 }
 
 /* Style comment section - CSS was adapted from the youtube tutorial by Mr. Web Designer found here: https://www.youtube.com/watch?v=vsycEiO6Itc */

@@ -22,11 +22,11 @@
 
     <div class="row">
         <div class="container vertical-center">
-            <div class="col-md-6 col-md-offset-3">
+            <div class="col-md-8 col-md-offset-2">
                 <!-- The dropdown menu to allow the user to select a dropzone -->
                 <div class="dz_selection">
                     <div class="dropdown_menu">
-                        <label for="dropdown">Select a dropzone</label>
+                        <label for="dropdown" id="dropdown_lbl">Select a dropzone</label>
                         <select name="dropdown" id="dropdown">
                             <option value="none" selected disabled hidden></option>
                             <option value="skydive_madrid">Skydive Madrid</option>
@@ -58,7 +58,9 @@
                     <p id="weather"></p>
                     <h3>Minimum licence requirements:</h3>
                     <p id="licence"></p>
-                    <iframe src="" frameborder="0" id="location"></iframe>
+                    <div id="location_container">
+                        <iframe src="" frameborder="0" id="location"></iframe>
+                    </div>
                     <label id="location_lbl" for="location"></label>
                     <h3><u>DZ contact details</u></h3>
                     <ul class="indent" id="contacts"></ul>
