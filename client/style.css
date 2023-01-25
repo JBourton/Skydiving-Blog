@@ -64,3 +64,8 @@ body {
     background-color: #fffffe;
     color: #8c7851;
 }
+
+.img-fluid {
+    max-width: 100%;
+    height: auto;
+}

@@ -35,6 +35,7 @@ function display_dropzone() {
     
 }
 
+// Populate dropzone div with object content retrieved from JSON file
 async function fetch_json(requestURL) {
     // Gather details about selected dropzone from JSON file
     const request = new Request(requestURL)
@@ -42,36 +43,28 @@ async function fetch_json(requestURL) {
     const response = await fetch(request);
     const retrievedDropzone = await response.json();
 
-    alert(retrievedDropzone.img_url);
-
-    // Populate name and image fields
-    const title = 'Dropzone name: ' + retrievedDropzone.name;
-    alert(title);
-
-    document.getElementById('title').innerHTML = title
+    
+    // Populate title and image fields
+    document.getElementById('title').innerHTML = retrievedDropzone.name;
     document.getElementById('dz_img').src = retrievedDropzone.img_url;
+    document.getElementById('img_description').innerHTML = retrievedDropzone.img_description;
 
     // Populate likes / dislikes lists
     document.getElementById('likes').innerHTML = retrievedDropzone.likes;
-    document.getElementById('dislikes').innerHTML = obj.dislikes
+    document.getElementById('dislikes').innerHTML = retrievedDropzone.dislikes;
 
     // Populate dz information
-    document.getElementById('kit_rental').innerHTML = obj.kit_rental;
+    document.getElementById('kit_rental').innerHTML = retrievedDropzone.kit_rental;
     document.getElementById('ticket_cost').innerHTML = retrievedDropzone.ticket_cost;
     document.getElementById('weather').innerHTML = retrievedDropzone.weather;
     document.getElementById('licence').innerHTML = retrievedDropzone.min_licence;
 
     // Populate location fields
     document.getElementById('location_lbl').innerHTML = 'Location: ' + retrievedDropzone.location_lbl;
-    document.getElementById('location').src = obj.location_src;
+    document.getElementById('location').src = retrievedDropzone.location_src;
 
     // Populate contacts list
-    document.getElementById('contacts').innerHTML = obj.dz_contacts
-}
-
-// Populate dropzone div with object content retrieved from JSON file
-function populate_jumbotron(retreivedDropzone) {
-    
+    document.getElementById('contacts').innerHTML = retrievedDropzone.dz_contacts
 }
 
 /*
