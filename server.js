@@ -7,13 +7,13 @@ function display_dropzone() {
     // Fetch value of dropzone name selected by user
     requestURL = null
     var selectedDz = document.getElementById('dropdown').value;
-    switch(expression) {
+    switch(selectedDz) {
         case selectedDz = 'skydive_madrid':
-        requestURL = '/JSONdropzones/madrid.json'
-        break;
+            requestURL = '/JSONdropzones/madrid.json'
+            break;
         case selectedDz = 'goskydive':
             requestURL = '/JSONdropzones/sailsbury.json'
-        break;
+            break;
         case selectedDz = 'skyhigh':
             requestURL = '/JSONdropzones/durham.json'
             break;
@@ -41,11 +41,8 @@ async function fetch_json(requestURL) {
     const response = await fetch(request);
     const retrievedDropzone = await response.json();
 
-    populate_jumbotron(retrievedDropzone);
-}
+    alert(retrievedDropzone.img_url);
 
-// Populate dropzone div with object content retrieved from JSON file
-function populate_jumbotron(retreivedDropzone) {
     // Populate name and image fields
     document.getElementById('title').innerHTML = 'Dropzone name: ' + retrievedDropzone.name;
     document.getElementById('dz_img').src = retrievedDropzone.img_url;
@@ -66,6 +63,11 @@ function populate_jumbotron(retreivedDropzone) {
 
     // Populate contacts list
     document.getElementById('contacts').innerHTML = retreivedDropzone.dz_contacts
+}
+
+// Populate dropzone div with object content retrieved from JSON file
+function populate_jumbotron(retreivedDropzone) {
+    
 }
 
 /*
