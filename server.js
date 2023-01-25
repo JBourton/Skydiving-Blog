@@ -67,6 +67,28 @@ async function fetch_json(requestURL) {
     document.getElementById('contacts').innerHTML = retrievedDropzone.dz_contacts
 }
 
+
+// Add event listener and function for button that removes text currently in comment input field
+const clear = document.querySelector('#remove_comment');
+clear.addEventListener('click', remove_comment);
+
+function remove_comment() {
+    document.getElementById('comment_field').value = "";
+}
+
+// Add event listener for button that submits a new comment
+const submit = document.querySelector('#submit_comment');
+submit.addEventListener('click', submit_comment);
+
+function submit_comment() {
+    const comment = document.getElementById('comment_field').value;
+    
+    if (comment !== "") {
+        // convert to key:value pair and add to comment box/json file
+    }
+}
+
+
 /*
 // Local IP
 const adress = 'http://127.0.0.1:8080/';
