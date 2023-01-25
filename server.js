@@ -43,7 +43,7 @@ async function fetch_json(requestURL) {
     const response = await fetch(request);
     const retrievedDropzone = await response.json();
 
-    
+
     // Populate title and image fields
     document.getElementById('title').innerHTML = retrievedDropzone.name;
     document.getElementById('dz_img').src = retrievedDropzone.img_url;
