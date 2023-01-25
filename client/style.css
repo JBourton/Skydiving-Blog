@@ -23,6 +23,10 @@ footer {
     font-size: 10px;
 }
 
+u {
+    text-decoration-color: #f25042;
+}
+
 .col-md-6 {
     background-color: #fff;
 }
@@ -37,6 +41,10 @@ footer {
 
 .jumbotron {
     padding: 0;
+}
+
+.jumbotron h3 {
+    color: #8c7851;
 }
 
 .comments {
@@ -68,4 +76,12 @@ body {
 .img-fluid {
     max-width: 100%;
     height: auto;
+}
+
+.dz_style {
+    color: #8c7851;
+}
+
+.indent {
+    padding-left: 5%;
 }
