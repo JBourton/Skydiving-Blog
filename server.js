@@ -1,3 +1,4 @@
+/*
 // Local IP
 const address = 'http://127.0.0.1:8080/';
 
@@ -5,10 +6,12 @@ const address = 'http://127.0.0.1:8080/';
 const express = require('express');
 const app = express();
 app.use(express.static('client'));
+*/
 
 // Add event listener to search button that displays information on selected dropzone
 const search = document.querySelector('#dz_selector');
 search.addEventListener('click', display_dropzone);
+
 
 // With thanks to the MDN web docs page found here: https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Objects/JSON for an overview of how to implement this
 function display_dropzone() {

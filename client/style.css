@@ -154,7 +154,7 @@ li {
     position: relative;
 }
 
-#comment_title {
+.comment_title {
     text-align: left;
     letter-spacing: 0.1rem;
     color: #8c7851;

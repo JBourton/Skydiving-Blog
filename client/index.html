@@ -70,7 +70,7 @@
                 <div class="comments">
                     <!-- Implementation of comment section based off of youtube tutorial by Mr. Web Designer found here: https://www.youtube.com/watch?v=vsycEiO6Itc -->
                     <div class="comment_inputs">
-                        <h4 id="comment_title">Add a comment</h4>
+                        <h4 class="comment_title">Add a comment</h4>
                         <input type="text" name="username_field" class="comment_field" placeholder="Enter username...">
                         <input type="text" name="comment_field" class="comment_field" placeholder="Your comment...">
                         <button class="custom_btn" id="submit_comment">Submit</button>
@@ -81,7 +81,13 @@
                         <div class="comment_box"></div>
                         <br>
                         <button class="custom_btn">Delete</button>
-                    </div>  
+                    </div>
+                    
+                    <div class="comment_inputs">
+                        <h4 class="comment_title">Search for a comment</h4>
+                        <input type="text" name="lookup_field" class="comment_field" placeholder="Enter keyword...">
+                        <button class="custom_btn" id="search_comment">Search</button>
+                    </div>
                 </div>  
             </div>
         </div>
