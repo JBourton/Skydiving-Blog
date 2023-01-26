@@ -70,6 +70,8 @@ li {
     border-radius: 5px;
     box-shadow: 0 0.5px 1px #8c7851;
     height: 5rem;
+    width: 20vh;
+    font-size: 3vh;
 }
 
 .custom_btn:hover {
