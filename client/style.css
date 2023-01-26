@@ -21,6 +21,10 @@ u {
     text-decoration-color: #f25042;
 }
 
+li {
+    font-size: 1.5rem;
+}
+
 /* Style title */
 .title {
     text-align: center;
@@ -31,6 +35,8 @@ u {
 .dz_selection {
     padding: 0;
     width: 90%;
+    display: inline-block;
+    
 }
 
 .dropdown_menu {
@@ -46,13 +52,13 @@ u {
 }
 
 #dropdown_lbl {
-    padding-right: 2rem;
+    padding-right: 2.5rem;
 }
 
 
 #dz_selector {
     position: absolute;
-    right: 2.5%;
+    right: 2.4%;
 }
 
 .custom_btn {
@@ -145,4 +151,12 @@ u {
     text-align: left;
     border: 1px solid #8c7851;
     border-radius: 5px;
+    position: relative;
+}
+
+#profile_credit {
+    font-size: 0.5rem;
+    position: absolute;
+    bottom: 0.1rem;
+    right: 1rem;
 }
