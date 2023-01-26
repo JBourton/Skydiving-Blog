@@ -82,9 +82,20 @@ const submit = document.querySelector('#submit_comment');
 submit.addEventListener('click', submit_comment);
 
 function submit_comment() {
-    const comment = document.getElementById('comment_field').value;
+    const comment = document.getElementById('comment_input').value;
+    const username = document.getElementById('username_input').value;
     
-    if (comment !== "") {
-        // convert to key:value pair and add to comment box/json file
+    if (comment !== "" && username !== "") {
+        // Read relevant JSON comment file as an array of key:value pairs
+        
+
+
+        // Create key:value pair from username and comment inputs
+
+        
+        // Append new key:value pair to array and save as JSON
+
+
+        // Read new JSON file into comment box
     }
 }
