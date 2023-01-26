@@ -70,15 +70,15 @@
                 <div class="comments">
                     <!-- Implementation of comment section based off of youtube tutorial by Mr. Web Designer found here: https://www.youtube.com/watch?v=vsycEiO6Itc -->
                     <div class="comment_inputs">
-                        <input type="text" name="comment_field" id="comment_field" placeholder="Add comment...">
+                        <h4 id="comment_title">Add a comment</h4>
+                        <input type="text" name="username_field" class="comment_field" placeholder="Enter username...">
+                        <input type="text" name="comment_field" class="comment_field" placeholder="Your comment...">
                         <button class="custom_btn" id="submit_comment">Submit</button>
                         <button class="custom_btn" id="remove_comment">Clear</button>
                     </div>
                     
                     <div class="commentbox_container">
-                        <div class="comment_box">
-                            <p id="profile_credit"><a href="https://www.flaticon.com/free-icons/user" title="user icons">User icons created by Freepik - Flaticon</a></p> 
-                        </div>
+                        <div class="comment_box"></div>
                         <br>
                         <button class="custom_btn">Delete</button>
                     </div>  

@@ -129,7 +129,7 @@ li {
     width: 90%;
 }
 
-#comment_field {
+.comment_field {
     width: 100%;
     padding: 1.5%;
     box-shadow: 0 0.5px 1px #8c7851;
@@ -154,9 +154,8 @@ li {
     position: relative;
 }
 
-#profile_credit {
-    font-size: 0.5rem;
-    position: absolute;
-    bottom: 0.1rem;
-    right: 1rem;
+#comment_title {
+    text-align: left;
+    letter-spacing: 0.1rem;
+    color: #8c7851;
 }

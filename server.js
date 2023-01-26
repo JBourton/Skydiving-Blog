@@ -1,3 +1,11 @@
+// Local IP
+const address = 'http://127.0.0.1:8080/';
+
+// Server setup
+const express = require('express');
+const app = express();
+app.use(express.static('client'));
+
 // Add event listener to search button that displays information on selected dropzone
 const search = document.querySelector('#dz_selector');
 search.addEventListener('click', display_dropzone);
@@ -90,14 +98,6 @@ function submit_comment() {
 
 
 /*
-// Local IP
-const adress = 'http://127.0.0.1:8080/';
-
-// Server setup
-const express = require('express');
-const app = express();
-app.use(express.static('client'));
-
 // Get request
 app.get('/dropzone', function(req, resp){
     resp.send('hi')

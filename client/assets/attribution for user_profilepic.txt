@@ -1,0 +1,9 @@
+<p id="profile_credit"><a href="https://www.flaticon.com/free-icons/user" title="user icons">User icons created by Freepik - Flaticon</a></p>
+
+Inside comment box: 
+#profile_credit {
+    font-size: 0.5rem;
+    position: absolute;
+    bottom: 0.1rem;
+    right: 1rem;
+}
