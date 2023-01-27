@@ -70,21 +70,23 @@
                 <div class="comments">
                     <!-- Implementation of comment section based off of youtube tutorial by Mr. Web Designer found here: https://www.youtube.com/watch?v=vsycEiO6Itc -->
                     <form class="comment_inputs" method="GET">
-                        <h4 class="comment_title">Add a comment</h4>
+                        <h4 id="comment_title">Add a comment</h4>
                         <input type="text" name="username" class="comment_field" id="username_input" placeholder="Enter username...">
                         <input type="text" name="comment" class="comment_field" id="comment_input" placeholder="Your comment...">
-                        <button class="custom_btn" id="submit_comment">Submit</button>
-                        <button class="custom_btn" id="remove_comment">Clear</button>
+                        <button class="custom_btn" id="submit_btn">Submit</button>
+                        <button class="custom_btn" id="remove_btn">Clear</button>
                     </form>
                     
-                    <div class="commentbox_container">
-                        <div class="comment_box"></div>
+                    <div id="commentbox_container">
+                        <div id="comment_box">
+                            <ul id="comment_list"></ul>                           
+                        </div>
                         <br>
-                        <button class="custom_btn">Delete</button>
+                        <button class="custom_btn" id="delete_btn">Delete</button>
                     </div>
                     
                     <form class="comment_inputs" method="GET">
-                        <h4 class="comment_title">Search for a comment</h4>
+                        <h4 id="comment_title">Search for a comment</h4>
                         <input type="text" name="lookup" class="comment_field" placeholder="Enter keyword...">
                         <button class="custom_btn" id="search_comment">Search</button>
                     </form>

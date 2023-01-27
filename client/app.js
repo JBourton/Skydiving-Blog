@@ -23,26 +23,39 @@ function display_dropzone() {
             commentURL = '/JSONcomments/durham_comments.json';
             break;
         case selectedDz = 'skydive_egypt':
-            requestURL = '../JSONdropzones/egypt.json';
+            requestURL = '/JSONdropzones/egypt.json';
             commentURL = '/JSONcomments/egypt_comments.json';
             break;
         case selectedDz = 'skydive_belize':
-            requestURL = '../JSONdropzones/belize.json';
+            requestURL = '/JSONdropzones/belize.json';
             commentURL = '/JSONcomments/belize_comments.json';
             break;
         case selectedDz = 'skydive_maldives':
-            requestURL = '../JSONdropzones/maldives.json';
+            requestURL = '/JSONdropzones/maldives.json';
             commentURL = '/JSONcomments/maldives_comments.json';
             break;
     }
 
 
     if (requestURL !== null) {
+        //add_actions(requestURL);
         fetch_json(requestURL);
         populate_comments(commentURL);
     }
     
 }
+
+/*
+// Add action field to forms for comment section
+function add_actions() {
+    // Local IP
+    const address = 'http://127.0.0.1:8080/';
+
+    // Concatenate address of relevant json file to local host
+    const action_field = address + requestURL;
+    return action_field;
+}
+*/
 
 // Populate dropzone div with object content retrieved from JSON file
 async function fetch_json(requestURL) {
@@ -76,22 +89,48 @@ async function fetch_json(requestURL) {
     document.getElementById('contacts').innerHTML = retrievedDropzone.dz_contacts
 }
 
-// Populate comment box upon dropzone selection
+// Populate comment box using AJAX upon dropzone selection
 function populate_comments(commentURL) {
+    // With thanks to dcode at https://www.youtube.com/watch?v=W6NsAO08vmE for the tutorial on how to load data from a JSON file using AJAX
+    const xhr = new XMLHttpRequest;
 
+    xhr.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+            // Convert returned JSON into a JS object
+            const comments = JSON.parse(this.responseText);
+
+            // Iterate through each key:value pair in object and add to comment box
+            for (const key in comments) {
+                if (comments.hasOwnProperty(key)) {
+                    let comment_list = document.getElementById("comment_list");
+                    let next_comment = document.createElement("li");
+                    comment_list.appendChild(next_comment);
+                    next_comment.innerHTML = `${key}: ${comments[key]}`
+                }
+              }
+            alert(comment_obj);
+
+            document.getElementById("comment_box").innerHTML = comment_obj;
+        } else {
+            // Should return an error code here
+            console.log('error');
+        }
+    }
+
+    xhr.open("GET", commentURL, true);
+    xhr.send();
 }
 
-
 // Add event listener and function for button that removes text currently in comment input field
-const clear = document.querySelector('#remove_comment');
+const clear = document.querySelector('#remove_btn');
 clear.addEventListener('click', remove_comment);
 
 function remove_comment() {
-    document.getElementById('comment_field').value = "";
+    //document.getElementById('comment_field').value = "";
 }
 
 // Add event listener for button that submits a new comment
-const submit = document.querySelector('#submit_comment');
+const submit = document.querySelector('#submit_btn');
 submit.addEventListener('click', submit_comment);
 
 function submit_comment() {
