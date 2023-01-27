@@ -19,7 +19,6 @@ app.listen(8080);
 */
 
 
-
 const express = require('express');
 const app = express();
 
@@ -28,7 +27,6 @@ const cors = require('cors');
 const port = 8080;
 
 app.use(express.static('client'));
-
 
 /*
 let testList = ['1', '2'];
