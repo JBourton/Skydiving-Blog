@@ -6,32 +6,40 @@ search.addEventListener('click', display_dropzone);
 // With thanks to the MDN web docs page found here: https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Objects/JSON for an overview of how to implement this
 function display_dropzone() {
     // Fetch value of dropzone name selected by user
-    requestURL = null
-    var selectedDz = document.getElementById('dropdown').value;
+    let requestURL = null
+    let commentURL = null
+    let selectedDz = document.getElementById('dropdown').value;
     switch(selectedDz) {
         case selectedDz = 'skydive_madrid':
-            requestURL = '/JSONdropzones/madrid.json'
+            requestURL = '/JSONdropzones/madrid.json';
+            commentURL = '/JSONcomments/madrid_comments.json';
             break;
         case selectedDz = 'goskydive':
-            requestURL = '/JSONdropzones/sailsbury.json'
+            requestURL = '/JSONdropzones/sailsbury.json';
+            commentURL = '/JSONcomments/sailsbury_comments.json';
             break;
         case selectedDz = 'skyhigh':
-            requestURL = '../JSONdropzones/durham.json'
+            requestURL = '../JSONdropzones/durham.json';
+            commentURL = '/JSONcomments/durham_comments.json';
             break;
         case selectedDz = 'skydive_egypt':
-            requestURL = '../JSONdropzones/egypt.json'
+            requestURL = '../JSONdropzones/egypt.json';
+            commentURL = '/JSONcomments/egypt_comments.json';
             break;
         case selectedDz = 'skydive_belize':
-            requestURL = '../JSONdropzones/belize.json'
+            requestURL = '../JSONdropzones/belize.json';
+            commentURL = '/JSONcomments/belize_comments.json';
             break;
         case selectedDz = 'skydive_maldives':
-            requestURL = '../JSONdropzones/maldives.json'
+            requestURL = '../JSONdropzones/maldives.json';
+            commentURL = '/JSONcomments/maldives_comments.json';
             break;
     }
 
 
     if (requestURL !== null) {
-        fetch_json(requestURL)
+        fetch_json(requestURL);
+        populate_comments(commentURL);
     }
     
 }
@@ -66,6 +74,11 @@ async function fetch_json(requestURL) {
 
     // Populate contacts list
     document.getElementById('contacts').innerHTML = retrievedDropzone.dz_contacts
+}
+
+// Populate comment box upon dropzone selection
+function populate_comments(commentURL) {
+
 }
 
 
