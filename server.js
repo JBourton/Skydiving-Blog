@@ -1,7 +1,6 @@
-// Local IP
+// Local URL
 const port = 8080;
 const address = 'http://127.0.0.1:'+port+'/';
-console.log(address);
 
 // Server setup
 const express = require('express');
@@ -9,9 +8,12 @@ const app = express();
 
 const path = require('path');
 const fs = require('fs');
+const bodyParser = require('body-parser');
 
 app.use(express.static('client')); // app.use(express.static(path.join(__dirname, 'client'))); - probably does the same thing
 app.use(express.json());
+app.use(bodyParser.json());
+
 
 // Test file to be deleted
 const fileNameForJSON = './testfile.json';
@@ -31,7 +33,20 @@ app.post('/test_dzs/new', function (req, resp) {
   resp.send(test_dzs);
 });
 
+app.listen(8080, ()=> {
+  console.log("listening on port 8080");
+})
+
+module.exports = app;
+
+
+
+
+
 /*
+const test = document.querySelector('#test_btn');
+test.addEventListener('click', say_hi);
+
 // Get request
 app.get('/dropzone', function(req, resp){
     resp.send('hi')
@@ -49,7 +64,7 @@ function say_hi() {
   alert("Hello World!");
 }
 
-const bodyParser = require('body-parser');
+
 const cors = require('cors');
 
 app.use(express.static('client'));
@@ -112,8 +127,3 @@ app.listen(port, ()=>{
 })
 */
 
-app.listen(8080, ()=> {
-  console.log("listening on port 8080");
-})
-
-module.exports = app;

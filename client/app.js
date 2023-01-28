@@ -89,9 +89,15 @@ async function fetch_json(requestURL) {
         document.getElementById('location').src = retrievedDropzone.location_src;
 
         // Populate contacts list
-        document.getElementById('contacts').innerHTML = retrievedDropzone.dz_contacts
+        document.getElementById('contacts').innerHTML = retrievedDropzone.dz_contacts;
+
+        
     } catch(e) {
         alert(e);
+        /*
+        response.statusCode = 404;
+        response.end;
+        */
     }
     
 }
