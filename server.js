@@ -1,33 +1,64 @@
-/*
 // Local IP
-const address = 'http://127.0.0.1:8080/';
+const port = 8080;
+const address = 'http://127.0.0.1:'+port+'/';
+console.log(address);
 
 // Server setup
 const express = require('express');
-const app = express(); 
-app.use(express.static('client'));
+const app = express();
+
+const path = require('path');
+const fs = require('fs');
+
+app.use(express.static('client')); // app.use(express.static(path.join(__dirname, 'client'))); - probably does the same thing
+app.use(express.json());
+
+// Test file to be deleted
+const fileNameForJSON = './testfile.json';
+const test_dzs = require(fileNameForJSON);
+
+app.get('/test_dzs', function (req, resp) {
+  const dzkeys = Object.keys(test_dzs);
+  resp.send(dzkeys);
+});
 
 
+app.post('/test_dzs/new', function (req, resp) {
+  const key = req.body.key;
+  const instructions = req.body.instructions;
+  test_dzs[key] = instructions;
+  fs.writeFileSync(fileNameForJSON, JSON.stringify(test_dzs));
+  resp.send(test_dzs);
+});
 
+/*
 // Get request
 app.get('/dropzone', function(req, resp){
     resp.send('hi')
 })
 
-// Listen on port 8080
-app.listen(8080);
-*/
+app.get('/test_dzs/:test_dzs', function (req, resp) {
+  const newdz = req.params.newdz;
+  const set = test_dzs[newdz];
+
+  resp.send(set);
+});
 
 
-const express = require('express');
-const app = express();
+function say_hi() {
+  alert("Hello World!");
+}
 
 const bodyParser = require('body-parser');
 const cors = require('cors');
-const port = 8080;
 
 app.use(express.static('client'));
+*/
 
+/*
+const test = document.querySelector('#test_btn');
+test.addEventListener('click', say_hi);
+*/
 /*
 let testList = ['1', '2'];
 
@@ -43,14 +74,12 @@ app.get('/', (req, resp) => {
   resp.end('Hello World!');
 })
 
-
-app.listen(8080, ()=> {
-  console.log("listening on port 8080");
-})
 */
+
 
 /* With thanks to https://dev.to/gbudjeakp/how-to-connect-your-client-side-to-your-server-side-using-node-and-express-2i71 for information on how to user body parser and cors packages */
 
+/*
 // We are using our packages here
 app.use( bodyParser.json() );       // to support JSON-encoded bodies
 
@@ -81,3 +110,10 @@ console.log(req.body.password);
 app.listen(port, ()=>{
   console.log(`Server is runing on port ${port}`)
 })
+*/
+
+app.listen(8080, ()=> {
+  console.log("listening on port 8080");
+})
+
+module.exports = app;
