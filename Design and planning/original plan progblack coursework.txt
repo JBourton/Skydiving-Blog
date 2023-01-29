@@ -48,3 +48,11 @@ async function name():
 	
 	const response = await fetch(request);
 	const dropzones = await response.json();
+
+_________________________________________________________________________________________________________________________________________________________________________
+29/01/23
+Could add date of submitted comment to comment entity type
+Should include the relationship between comment json file and dropzone json file
+
+May need to refer to this later: https://nodejs.org/en/docs/guides/anatomy-of-an-http-transaction/   ---> Should use the information here to sanitise form inputs, e.g. character limit, rude words etc
+This one's pretty good for the basic understanding: https://www.youtube.com/watch?v=vegqqDjulKg
