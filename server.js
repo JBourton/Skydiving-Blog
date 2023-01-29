@@ -10,9 +10,15 @@ const path = require('path');
 const fs = require('fs');
 const bodyParser = require('body-parser');
 
+// bodyParser setup information found at https://stackoverflow.com/questions/5710358/how-to-access-post-form-fields-in-express
 app.use(express.static('client')); // app.use(express.static(path.join(__dirname, 'client'))); - probably does the same thing
 app.use(express.json());
-app.use(bodyParser.json());
+app.use(express.urlencoded()); // to support URL-encoded bodies
+app.use( bodyParser.json() );       // to support JSON-encoded bodies
+app.use(bodyParser.urlencoded({     // to support URL-encoded bodies
+  extended: true
+})); 
+
 
 
 // Test file to be deleted
