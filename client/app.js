@@ -1,3 +1,18 @@
+/*
+const { json } = require("body-parser");
+
+const fs = require('fs');
+const submitIt = document.querySelector('#test_btn');
+submitIt.addEventListener('click', doTest);
+
+function doTest() {
+    alert('weve gotten to here');
+    let data = JSON.stringify([1, 2, 3]);
+    fs.writeFileSync('./testfile.json', data);
+    alert('did it work?');
+}
+*/
+
 // Add event listener to search button that displays information on selected dropzone
 const search = document.querySelector('#dz_selector');
 search.addEventListener('click', display_dropzone);
