@@ -11,5 +11,5 @@ exports.page_content = (req, res) =>
 exports.form_content_sent = (req, res) =>
 {  
    console.log(req.body);
-   res.send('<h1>Sucsess</h1>');
+   res.send('<h1>Succsess</h1>');
 }  
