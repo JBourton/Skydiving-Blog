@@ -4,7 +4,7 @@ const { json } = require("body-parser");
 const fs = require('fs');
 const submitIt = document.querySelector('#test_btn');
 submitIt.addEventListener('click', doTest);
-
+information
 function doTest() {
     alert('weve gotten to here');
     let data = JSON.stringify([1, 2, 3]);
@@ -13,9 +13,16 @@ function doTest() {
 }
 */
 
-// Add event listener to search button that displays information on selected dropzone
-const search = document.querySelector('#dz_selector');
-search.addEventListener('click', display_dropzone);
+document.addEventListener('DOMContentLoaded', () => {
+    // Add event listenters to button that loads dropzone entity information
+    document.querySelector('#dz_selector').addEventListener('click', display_dropzone);
+
+    // Add event listener for button that submits a new comment
+    document.querySelector('#submit_btn').addEventListener('click', submit_comment);
+
+    // Add event listener and function for button that removes text currently in comment input field
+    document.querySelector('#remove_btn').addEventListener('click', remove_comment);
+})
 
 // Comments as a js variable
 let comments = {};
@@ -143,9 +150,6 @@ function populate_comments(commentURL) {
     xhr.send();
 }
 
-// Add event listener for button that submits a new comment
-const submit = document.querySelector('#submit_btn');
-submit.addEventListener('click', submit_comment);
 
 function submit_comment() {
     const username = document.getElementById('username_input').value;
@@ -164,10 +168,6 @@ function submit_comment() {
         // Read new JSON file into comment box
     }
 }
-
-// Add event listener and function for button that removes text currently in comment input field
-const clear = document.querySelector('#remove_btn');
-clear.addEventListener('click', remove_comment);
 
 function remove_comment() {
     //document.getElementById('comment_field').value = "";
