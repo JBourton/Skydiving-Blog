@@ -34,7 +34,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // TEST, TO BE REMOVED
     document.querySelector('#test_btn').addEventListener('click', async () => {
-        test_comment();
+        post_test_comment();
     });
 })
 
@@ -163,7 +163,7 @@ function populate_comments(commentURL) {
     xhr.send();
 }
 
-async function test_comment() {
+async function post_test_comment() {
     const username = document.getElementById('testusername_input').value;
     const comment = document.getElementById('testcomment_input').value;
     if (comment !== "" && username !== "") {
@@ -174,9 +174,9 @@ async function test_comment() {
                 headers: {
                     'Content-Type': 'application/json'
                 },
-                body: JSON.stringify({username: comment})
+                body: JSON.stringify({username: username, comment: comment})
             });
-
+            
             // Update comment box if submission sucsessful
             if (response.status === 200) {
                 populate_comments(commentURL);

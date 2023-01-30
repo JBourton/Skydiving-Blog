@@ -13,23 +13,34 @@ const routing = require('./routes/routing');
 // API middlewares
 const path = require('path');
 const fs = require('fs');
-const bodyParser = require('body-parser');
+//const bodyParser = require('body-parser');
+
+const fileName = './test_comments.json';
+const mytestcomments = require(fileName);
 
 // bodyParser setup information found at https://stackoverflow.com/questions/5710358/how-to-access-post-form-fields-in-express
 app.use(express.static(path.join(__dirname, 'client')));
 app.use(express.json());            // Accept data in JSON format
-app.use(bodyParser.json());  
+//app.use(bodyParser.json());  
 //app.use(bodyParser.urlencoded({extended:true}));
 app.use(express.urlencoded());      // Decode data sent through HTML form     
 
 // using routes middleware - partial implementation used from https://codeofgeeks.com/how-to-post-html-form-data-to-node-express-server/
 //app.use('/', routing);
 
+// routing.postComment(app);
 
+app.post('/api', function (req, resp) {
+  //  console.log(req.body);
+  const username = req.body.username;
+  const comment = req.body.comment;
+  mytestcomments[username] = comment;
 
-routing.postComment(app);
+  console.log(mytestcomments);
 
-
+  fs.writeFileSync(fileName, JSON.stringify(mytestcomments));
+  resp.send(mytestcomments);
+});
 
 
 app.listen(8080, ()=> {

@@ -2,13 +2,14 @@ const express = require('express');
 //const router = express.Router();
 const controller = require('../load_content/render_form.js');
 
-const mytestcomments = require('../JSONcomments/test_comments.json');
+const mytestcomments = require('../test_comments.json');
 const { use } = require('../server.js');
 
 
 function postComment(app) {
     console.log("Hi guys!");
     app.post('/api', function (req, resp) {
+        //  console.log(req.body);
         const username = req.body.username;
         const comment = req.body.comment;
         // console.log("username: " + username + ", comment: " + comment);
