@@ -40,17 +40,31 @@ document.addEventListener('DOMContentLoaded', () => {
 
 // Displays either succsess or error message for attempted form submission
 function display_submission_result(elemID, success) {
-    alert(elemID);
     message = document.getElementById(elemID);
-    alert(message);
     if (success) {
         message.innerHTML = "Submission successful!";
         message.style.color = "green";
+        fade(message);
     } else {
         message.innerHTML = "Form submission error";
         message.style.color = "red";
+        fade(message);
     }
     
+}
+
+// With thank to stack overflow user Ibu for use of fade function found here: https://stackoverflow.com/questions/6121203/how-to-do-fade-in-and-fade-out-with-javascript-and-css
+function fade(element) {
+    var op = 1;  // initial opacity
+    var timer = setInterval(function () {
+        if (op <= 0.1){
+            clearInterval(timer);
+            element.style.display = 'none';
+        }
+        element.style.opacity = op;
+        element.style.filter = 'alpha(opacity=' + op * 100 + ")";
+        op -= op * 0.1;
+    }, 200);
 }
 
 // Comments as a js object
