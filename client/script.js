@@ -38,6 +38,21 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 })
 
+// Displays either succsess or error message for attempted form submission
+function display_submission_result(elemID, success) {
+    alert(elemID);
+    message = document.getElementById(elemID);
+    alert(message);
+    if (success) {
+        message.innerHTML = "Submission successful!";
+        message.style.color = "green";
+    } else {
+        message.innerHTML = "Form submission error";
+        message.style.color = "red";
+    }
+    
+}
+
 // Comments as a js object
 let comments = {};
 
@@ -168,7 +183,6 @@ async function post_test_comment() {
     const comment = document.getElementById('testcomment_input').value;
     if (comment !== "" && username !== "") {
         try {
-            alert("TESTING URL: " + address);
             const res = await fetch(address, {
                 method: 'POST',
                 headers: {
@@ -176,20 +190,25 @@ async function post_test_comment() {
                 },
                 body: JSON.stringify({username: username, comment: comment})
             });
+
+            
             
             // Update comment box if submission sucsessful
-            if (response.status === 200) {
+            if (res.status === 200) {
                 populate_comments(commentURL);
+                display_submission_result('test_submission_msg', true);
             } else {
                 alert('Error Creating Comment', await response.text());
+                display_submission_result('test_submission_msg', false);
             }
 
         } catch (e) {
-            console.log('Error: sever connection not establishe');
+            console.log('Error: sever connection not established');
         }
+
+        document.getElementById('test_box').reset();
     }
-    username.reset();
-    password.reset();
+    
 
     /*
         // Add username and comment as new key:value pair to comment object
