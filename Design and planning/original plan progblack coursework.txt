@@ -52,9 +52,11 @@ async function name():
 _________________________________________________________________________________________________________________________________________________________________________
 29/01/23
 Could add date of submitted comment to comment entity type
-Should include the relationship between comment json file and dropzone json file
+Should include the relationship between comment json file and dropzone json file --> This can be the dropzone being a parent of the comment
 
 May need to refer to this later: https://nodejs.org/en/docs/guides/anatomy-of-an-http-transaction/   ---> Should use the information here to sanitise form inputs, e.g. character limit, rude words etc
 This one's pretty good for the basic understanding: https://www.youtube.com/watch?v=vegqqDjulKg
 
 For AJAX json loading: https://femkreations.com/how-to-load-json-using-ajax-in-9-easy-steps-with-fun-project/
+
+Should probably have a nice alert button for comment not submitted, with a resuable function to call.

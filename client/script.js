@@ -1,3 +1,9 @@
+// Local URL
+const port = 8080;
+const address = 'http://127.0.0.1:'+port+'/api';
+
+let commentURL = null;
+
 /*
 const { json } = require("body-parser");
 
@@ -13,25 +19,32 @@ function doTest() {
 }
 */
 
+// Setup event listeners on page buttons
 document.addEventListener('DOMContentLoaded', () => {
     // Add event listenters to button that loads dropzone entity information
     document.querySelector('#dz_selector').addEventListener('click', display_dropzone);
 
     // Add event listener for button that submits a new comment
-    document.querySelector('#submit_btn').addEventListener('click', submit_comment);
+    document.querySelector('#submit_btn').addEventListener('click', async () => {
+        submit_comment(commentURL);
+    });
 
     // Add event listener and function for button that removes text currently in comment input field
     document.querySelector('#remove_btn').addEventListener('click', remove_comment);
+
+    // TEST, TO BE REMOVED
+    document.querySelector('#test_btn').addEventListener('click', async () => {
+        test_comment();
+    });
 })
 
-// Comments as a js variable
+// Comments as a js object
 let comments = {};
 
 // With thanks to the MDN web docs page found here: https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Objects/JSON for an overview of how to implement this
 function display_dropzone() {
     // Fetch value of dropzone name selected by user
-    let requestURL = null
-    let commentURL = null
+    let requestURL = null;
     let selectedDz = document.getElementById('dropdown').value;
     switch(selectedDz) {
         case selectedDz = 'skydive_madrid':
@@ -150,25 +163,83 @@ function populate_comments(commentURL) {
     xhr.send();
 }
 
+async function test_comment() {
+    const username = document.getElementById('testusername_input').value;
+    const comment = document.getElementById('testcomment_input').value;
+    if (comment !== "" && username !== "") {
+        try {
+            alert("TESTING URL: " + address);
+            const res = await fetch(address, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({username: comment})
+            });
 
-function submit_comment() {
+            // Update comment box if submission sucsessful
+            if (response.status === 200) {
+                populate_comments(commentURL);
+            } else {
+                alert('Error Creating Comment', await response.text());
+            }
+
+        } catch (e) {
+            console.log('Error: sever connection not establishe');
+        }
+    }
+    username.reset();
+    password.reset();
+
+    /*
+        // Add username and comment as new key:value pair to comment object
+        //comments.username = comment;
+        // Update comment box     
+        // Append new key:value pair to array and save as JSON
+        // Read new JSON file into comment box 
+    */
+}
+
+
+async function submit_comment(commentURL) {
     const username = document.getElementById('username_input').value;
     const comment = document.getElementById('comment_input').value;
     
     if (comment !== "" && username !== "") {
-        // Add username and comment as new key:value pair to comment object
-        comments.username = comment;
+        try {
+            alert("TESTING URL: " + address + commentURL);
+            const res = await fetch(address + commentURL, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({username: comment})
+            });
 
-        // Update comment box
+            if (response.status === 200) {
+                // Post comment
+            } else {
+                showAlert('Error Creating Comment', await response.text());
+            }
 
+        } catch (e) {
+            console.log('Error: sever connection not established');
+        }
         
+        
+        // Add username and comment as new key:value pair to comment object
+        //comments.username = comment;
+        // Update comment box     
         // Append new key:value pair to array and save as JSON
-
-
         // Read new JSON file into comment box
     }
 }
 
 function remove_comment() {
     //document.getElementById('comment_field').value = "";
+}
+
+// Should display a (reusable) dissapearing error message
+function display_error(title, msg) {
+
 }

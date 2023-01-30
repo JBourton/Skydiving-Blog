@@ -2,13 +2,13 @@
 const express = require('express');
 
 // Send homepage from server to client on load
-exports.form = (req, res) =>
+exports.page_content = (req, res) =>
 {  
     res.sendFile('client/index.html', { root: '.' });
 }
 
 // Send sucsessful page content upon form submission
-exports.formprocess = (req, res) =>
+exports.form_content_sent = (req, res) =>
 {  
    console.log(req.body);
    res.send('<h1>Sucsess</h1>');

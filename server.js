@@ -8,7 +8,7 @@ const app = express();
 
 // I want this line of code to connect button clicks to server-side code
 // const myFunctionality = require(__dirname + '/client/app.js'); 
-const routes = require('./routes/routing');
+const routing = require('./routes/routing');
 
 // API middlewares
 const path = require('path');
@@ -23,11 +23,11 @@ app.use(bodyParser.json());
 app.use(express.urlencoded());      // Decode data sent through HTML form     
 
 // using routes middleware - partial implementation used from https://codeofgeeks.com/how-to-post-html-form-data-to-node-express-server/
-app.use('/', routes);
+//app.use('/', routing);
 
 
 
-
+routing.postComment(app);
 
 
 
