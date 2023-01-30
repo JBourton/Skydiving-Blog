@@ -20,7 +20,17 @@ const mytestcomments = require(fileName);
 
 app.use(express.static(path.join(__dirname, 'client')));
 app.use(express.json());            // Accept data in JSON format
-app.use(express.urlencoded());      // Decode data sent through HTML form     
+app.use(express.urlencoded());      // Decode data sent through HTML form
+
+
+const entity = require('./entity.js');
+
+// Create entities and set relationships
+const dropzones = new entity.Entity('dropzones');
+const comments = new entity.Entity('comments');
+
+entity.Entity.createManyToOne(comments, dropzones);
+
 
 // routing.postComment(app);
 
