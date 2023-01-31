@@ -19,8 +19,8 @@ class Dropzone {
         this.contacts = contacts;
 
         this.comments = {};
-        
-        this.datapath = '/data/Dropzones.json' ;
+
+        this.datapath = '/data/Dropzones.json';
     }
 
     /**

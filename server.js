@@ -14,8 +14,13 @@ const app = express();
 const path = require('path');
 const fs = require('fs');
 //const bodyParser = require('body-parser');
+// const entity = require('./entity.js');
 
-const fileName = '/data/test_comments.json';
+const datapath = './Dropzones';
+const dropzoneFile = require(datapath);
+console.log(dropzoneFile.entities[0].comments);
+
+const fileName = './test_comments.json';
 const mytestcomments = require(fileName);
 
 app.use(express.static(path.join(__dirname, 'client')));
@@ -23,7 +28,15 @@ app.use(express.json());            // Accept data in JSON format
 app.use(express.urlencoded());      // Decode data sent through HTML form
 
 
-const entity = require('./entity.js');
+
+
+// Send back a dropzone object
+app.get('/fetchDropzone/:dropzoneNum', function (req, resp) {
+  const dzNum = req.params.dzNum;
+  const dz = dropzoneFile[dzNum];
+
+  resp.send(dz);
+})
 
 
 app.post('/api', function (req, resp) {
