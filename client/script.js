@@ -3,6 +3,8 @@ const port = 8080;
 const address = 'http://127.0.0.1:'+port+'/api';
 
 let commentURL = null;
+let currentDropzoneID = null;
+const dataURL = '/data/Dropzones.json';
 
 /*
 const { json } = require("body-parser");
