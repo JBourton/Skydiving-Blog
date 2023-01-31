@@ -18,7 +18,6 @@ const fs = require('fs');
 
 const datapath = './Dropzones';
 const dropzoneFile = require(datapath);
-console.log(dropzoneFile.entities[0].comments);
 
 const fileName = './test_comments.json';
 const mytestcomments = require(fileName);
@@ -28,12 +27,14 @@ app.use(express.json());            // Accept data in JSON format
 app.use(express.urlencoded());      // Decode data sent through HTML form
 
 
-
-
 // Send back a dropzone object
-app.get('/fetchDropzone/:dropzoneNum', function (req, resp) {
-  const dzNum = req.params.dzNum;
-  const dz = dropzoneFile[dzNum];
+app.get('/fetchDropzone/:dzNum', function (req, resp) {
+  const dzNum = req.params.dzNum - 1;
+  const dz = dropzoneFile.entities[dzNum];
+
+  console.log("dzNum: " + dzNum);
+  console.log("dz.name: " + dz.name);
+  console.log("dz: " + dz);
 
   resp.send(dz);
 })

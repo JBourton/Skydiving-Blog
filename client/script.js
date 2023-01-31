@@ -1,25 +1,10 @@
 // Local URL
 const port = 8080;
+const route = 'http://127.0.0.1:'+port;
 const address = 'http://127.0.0.1:'+port+'/api';
 
-let commentURL = null;
 let currentDropzoneID = null;
 const dataURL = '/data/Dropzones.json';
-
-/*
-const { json } = require("body-parser");
-
-const fs = require('fs');
-const submitIt = document.querySelector('#test_btn');
-submitIt.addEventListener('click', doTest);
-information
-function doTest() {
-    alert('weve gotten to here');
-    let data = JSON.stringify([1, 2, 3]);
-    fs.writeFileSync('./testfile.json', data);
-    alert('did it work?');
-}
-*/
 
 // Setup event listeners on page buttons
 document.addEventListener('DOMContentLoaded', () => {
@@ -75,65 +60,45 @@ let comments = {};
 // With thanks to the MDN web docs page found here: https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Objects/JSON for an overview of how to implement this
 function display_dropzone() {
     // Fetch value of dropzone name selected by user
-    let requestURL = null;
+    let requestURL;
+    let postfix = null;
     let selectedDz = document.getElementById('dropdown').value;
     switch(selectedDz) {
         case selectedDz = 'skydive_madrid':
-            requestURL = '/JSONdropzones/madrid.json';
-            commentURL = '/JSONcomments/madrid_comments.json';
+            postfix = 1;
             break;
         case selectedDz = 'goskydive':
-            requestURL = '/JSONdropzones/sailsbury.json';
-            commentURL = '/JSONcomments/sailsbury_comments.json';
+            postfix = 2;
             break;
         case selectedDz = 'skyhigh':
-            requestURL = '../JSONdropzones/durham.json';
-            commentURL = '/JSONcomments/durham_comments.json';
+            postfix = 3;
             break;
         case selectedDz = 'skydive_egypt':
-            requestURL = '/JSONdropzones/egypt.json';
-            commentURL = '/JSONcomments/egypt_comments.json';
+            postfix = 4;
             break;
         case selectedDz = 'skydive_belize':
-            requestURL = '/JSONdropzones/belize.json';
-            commentURL = '/JSONcomments/belize_comments.json';
+            postfix = 5;
             break;
         case selectedDz = 'skydive_maldives':
-            requestURL = '/JSONdropzones/maldives.json';
-            commentURL = '/JSONcomments/maldives_comments.json';
+            postfix = 6;
             break;
     }
 
+    requestURL = route + '/fetchDropzone/' + postfix;
 
-    if (requestURL !== null) {
-        //add_actions(requestURL);
+    if (postfix !== null) {
         fetch_json(requestURL);
-        populate_comments(commentURL);
+        //populate_comments(commentURL);
     }
     
 }
 
-/*
-// Add action field to forms for comment section
-function add_actions() {
-    // Local IP
-    const address = 'http://127.0.0.1:8080/';
-
-    // Concatenate address of relevant json file to local host
-    const action_field = address + requestURL;
-    return action_field;
-}
-*/
-
 // Populate dropzone div with object content retrieved from JSON file
 async function fetch_json(requestURL) {
     try {
-        // Gather details about selected dropzone from JSON file
-        const request = new Request(requestURL)
-
-        const response = await fetch(request);
-        const retrievedDropzone = await response.json();
-        
+        // Send request for selected dropzone to server
+        const data = await fetch(requestURL);
+        const retrievedDropzone = await data.json();
 
         // Populate title and image fields
         document.getElementById('title').innerHTML = retrievedDropzone.name;
