@@ -15,7 +15,7 @@ const path = require('path');
 const fs = require('fs');
 //const bodyParser = require('body-parser');
 
-const fileName = './test_comments.json';
+const fileName = '/data/test_comments.json';
 const mytestcomments = require(fileName);
 
 app.use(express.static(path.join(__dirname, 'client')));
@@ -25,14 +25,6 @@ app.use(express.urlencoded());      // Decode data sent through HTML form
 
 const entity = require('./entity.js');
 
-// Create entities and set relationships
-const dropzones = new entity.Entity('dropzones');
-const comments = new entity.Entity('comments');
-
-entity.Entity.createManyToOne(comments, dropzones);
-
-
-// routing.postComment(app);
 
 app.post('/api', function (req, resp) {
   //  console.log(req.body);

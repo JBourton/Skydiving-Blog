@@ -133,3 +133,11 @@ app.listen(port, ()=>{
 })
 */
 
+
+// Create entities and set relationships
+//const dropzones = new entity.Dropzone('dropzone');
+//const comments = new entity.Entity('comment');
+
+//entity.Entity.createManyToOne(comments, dropzones);
+// routing.postComment(app);
+
