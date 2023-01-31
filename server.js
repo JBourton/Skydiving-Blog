@@ -31,11 +31,6 @@ app.use(express.urlencoded());      // Decode data sent through HTML form
 app.get('/fetchDropzone/:dzNum', function (req, resp) {
   const dzNum = req.params.dzNum - 1;
   const dz = dropzoneFile.entities[dzNum];
-
-  console.log("dzNum: " + dzNum);
-  console.log("dz.name: " + dz.name);
-  console.log("dz: " + dz);
-
   resp.send(dz);
 })
 

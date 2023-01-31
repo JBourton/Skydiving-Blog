@@ -4,6 +4,7 @@ const route = 'http://127.0.0.1:'+port;
 const address = 'http://127.0.0.1:'+port+'/api';
 
 let currentDropzoneID = null;
+let commentEntity;
 const dataURL = '/data/Dropzones.json';
 
 // Setup event listeners on page buttons
@@ -87,42 +88,27 @@ function display_dropzone() {
     requestURL = route + '/fetchDropzone/' + postfix;
 
     if (postfix !== null) {
-        fetch_json(requestURL);
-        //populate_comments(commentURL);
+        fetchEntities(requestURL);
     }
     
 }
 
 // Populate dropzone div with object content retrieved from JSON file
-async function fetch_json(requestURL) {
+async function fetchEntities(requestURL) {
     try {
         // Send request for selected dropzone to server
         const data = await fetch(requestURL);
         const retrievedDropzone = await data.json();
 
-        // Populate title and image fields
-        document.getElementById('title').innerHTML = retrievedDropzone.name;
-        document.getElementById('dz_img').src = retrievedDropzone.img_url;
-        document.getElementById('img_description').innerHTML = retrievedDropzone.img_description;
+        // Fill all fields in the Dropzone entity container
+        fillDropzoneInfo(retrievedDropzone);
 
-        // Populate likes / dislikes lists
-        document.getElementById('likes').innerHTML = retrievedDropzone.likes;
-        document.getElementById('dislikes').innerHTML = retrievedDropzone.dislikes;
+        // Fetch comments
+        retrievedComments = retrievedDropzone.comments;
 
-        // Populate dz information
-        document.getElementById('kit_rental').innerHTML = retrievedDropzone.kit_rental;
-        document.getElementById('ticket_cost').innerHTML = retrievedDropzone.ticket_cost;
-        document.getElementById('weather').innerHTML = retrievedDropzone.weather;
-        document.getElementById('licence').innerHTML = retrievedDropzone.min_licence;
+        // Populate comment box
+        populateComments(retrievedComments);
 
-        // Populate location fields
-        document.getElementById('location_lbl').innerHTML = 'Location: ' + retrievedDropzone.location_lbl;
-        document.getElementById('location').src = retrievedDropzone.location_src;
-
-        // Populate contacts list
-        document.getElementById('contacts').innerHTML = retrievedDropzone.dz_contacts;
-
-        
     } catch(e) {
         alert(e);
         /*
@@ -133,30 +119,46 @@ async function fetch_json(requestURL) {
     
 }
 
+/**
+ * Populate the jumbotron with a particular instance of the Dropzone entity
+ * @param {Object} dropzoneEntity The object containing all relvant fields pertaining to the Dropzone entity
+ */
+function fillDropzoneInfo(dropzoneEntity) {
+     // Populate title and image fields
+     document.getElementById('title').innerHTML = dropzoneEntity.name;
+     document.getElementById('dz_img').src = dropzoneEntity.img_url;
+     document.getElementById('img_description').innerHTML = dropzoneEntity.img_description;
+
+     // Populate likes / dislikes lists
+     document.getElementById('likes').innerHTML = dropzoneEntity.likes;
+     document.getElementById('dislikes').innerHTML = dropzoneEntity.dislikes;
+
+     // Populate dz information
+     document.getElementById('kit_rental').innerHTML = dropzoneEntity.kit_rental;
+     document.getElementById('ticket_cost').innerHTML = dropzoneEntity.ticket_cost;
+     document.getElementById('weather').innerHTML = dropzoneEntity.weather;
+     document.getElementById('licence').innerHTML = dropzoneEntity.min_licence;
+
+     // Populate location fields
+     document.getElementById('location_lbl').innerHTML = 'Location: ' + dropzoneEntity.location_lbl;
+     document.getElementById('location').src = dropzoneEntity.location_src;
+
+     // Populate contacts list
+     document.getElementById('contacts').innerHTML = dropzoneEntity.dz_contacts;
+
+}
+
 // Populate comment box using AJAX upon dropzone selection
-function populate_comments(commentURL) {
-    // With thanks to dcode at https://www.youtube.com/watch?v=W6NsAO08vmE for the tutorial on how to load data from a JSON file using AJAX
-    const xhr = new XMLHttpRequest;
-
-    xhr.onreadystatechange = function() {
-        if (this.readyState == 4 && this.status == 200) {
-            // Convert returned JSON into a JS object
-            comments = JSON.parse(this.responseText);
-
-            // Iterate through each key:value pair in object and add to comment box
-            for (const key in comments) {
-                if (comments.hasOwnProperty(key)) {
-                    let comment_list = document.getElementById("comment_list");
-                    let next_comment = document.createElement("li");
-                    comment_list.appendChild(next_comment);
-                    next_comment.innerHTML = `${key}: ${comments[key]}`
-                }
-              }
+function populateComments(commentEntity) {
+    // Iterate through each key:value pair in object and add to comment box
+    for (const key in commentEntity) {
+        if (commentEntity.hasOwnProperty(key)) {
+            let comment_list = document.getElementById("comment_list");
+            let next_comment = document.createElement("li");
+            comment_list.appendChild(next_comment);
+            next_comment.innerHTML = `${key}: ${commentEntity[key]}`
         }
     }
-
-    xhr.open("GET", commentURL, true);
-    xhr.send();
 }
 
 async function post_test_comment() {
