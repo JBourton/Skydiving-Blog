@@ -6,21 +6,13 @@ const address = 'http://127.0.0.1:'+port+'/';
 const express = require('express');
 const app = express();
 
-// I want this line of code to connect button clicks to server-side code
-// const myFunctionality = require(__dirname + '/client/app.js'); 
-//const routing = require('./routes/routing');
-
 // API middlewares
 const path = require('path');
 const fs = require('fs');
-//const bodyParser = require('body-parser');
 // const entity = require('./entity.js');
 
-const datapath = './Dropzones';
-const dropzoneFile = require(datapath);
-
-const fileName = './test_comments.json';
-const mytestcomments = require(fileName);
+const fileName = './Dropzones.json';
+const dropzoneFile = require(fileName);
 
 app.use(express.static(path.join(__dirname, 'client')));
 app.use(express.json());            // Accept data in JSON format
@@ -29,22 +21,46 @@ app.use(express.urlencoded());      // Decode data sent through HTML form
 
 // Send back a dropzone object
 app.get('/fetchDropzone/:dzNum', function (req, resp) {
-  const dzNum = req.params.dzNum - 1;
+  const dzNum = req.params.dzNum;
   const dz = dropzoneFile.entities[dzNum];
   resp.send(dz);
 })
 
 
-app.post('/api', function (req, resp) {
+app.post('/postComment/:dzNum', function (req, resp) {
   //  console.log(req.body);
+  const dzNum = req.params.dzNum;
   const username = req.body.username;
   const comment = req.body.comment;
-  mytestcomments[username] = comment;
+  
+  // Update value of comment object with new comment
+  let commentSection = dropzoneFile.entities[dzNum].comments;
+  
+  
+  // Just the . part for .username isn't working
+  commentSection[username] = comment;
+  
 
-  console.log(mytestcomments);
+  dropzoneFile.entities[dzNum].comments = commentSection;
 
-  fs.writeFileSync(fileName, JSON.stringify(mytestcomments));
-  resp.send(mytestcomments);
+  console.log(dropzoneFile.entities[dzNum].comments);
+ 
+  /*
+  let comments = Object.values(commentSection);
+  comments.username = comment;
+
+  console.log("comments: " + comments);
+  console.log("typeof comments: " + typeof(comments));
+  */
+
+  // With thanks to stack overflow user Seth for information on how to create the writeJSON function https://stackoverflow.com/questions/10685998/how-to-update-a-value-in-a-json-file-and-save-it-through-node-js
+  fs.writeFile(fileName, JSON.stringify(dropzoneFile, null, 4), function writeJSON(err) {
+    if (err) return console.log(err);
+    //console.log(JSON.stringify(dropzoneFile));
+    console.log('writing to ' + fileName);
+  });
+
+  resp.send(dropzoneFile.entities[dzNum].comments);
 });
 
 

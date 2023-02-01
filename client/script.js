@@ -1,33 +1,27 @@
 // Local URL
 const port = 8080;
-const route = 'http://127.0.0.1:'+port;
-const address = 'http://127.0.0.1:'+port+'/api';
+const address = 'http://127.0.0.1:'+port;
 
-let currentDropzoneID = null;
-let commentEntity;
-const dataURL = '/data/Dropzones.json';
+// ID number of the currently selected dropzone
+let postfix;
+let retrievedDropzone;
 
 // Setup event listeners on page buttons
 document.addEventListener('DOMContentLoaded', () => {
     // Add event listenters to button that loads dropzone entity information
-    document.querySelector('#dz_selector').addEventListener('click', display_dropzone);
+    document.querySelector('#dz_selector').addEventListener('click', displayDropzone);
 
     // Add event listener for button that submits a new comment
     document.querySelector('#submit_btn').addEventListener('click', async () => {
-        submit_comment(commentURL);
+        newComment();
     });
 
     // Add event listener and function for button that removes text currently in comment input field
-    document.querySelector('#remove_btn').addEventListener('click', remove_comment);
-
-    // TEST, TO BE REMOVED
-    document.querySelector('#test_btn').addEventListener('click', async () => {
-        post_test_comment();
-    });
+    document.querySelector('#clear_btn').addEventListener('click', clearComment);
 })
 
 // Displays either succsess or error message for attempted form submission
-function display_submission_result(elemID, success) {
+function displaySubmissionResult(elemID, success) {
     message = document.getElementById(elemID);
     if (success) {
         message.innerHTML = "Submission successful!";
@@ -41,7 +35,7 @@ function display_submission_result(elemID, success) {
     
 }
 
-// With thank to stack overflow user Ibu for use of fade function found here: https://stackoverflow.com/questions/6121203/how-to-do-fade-in-and-fade-out-with-javascript-and-css
+// With thanks to stack overflow user Ibu for use of fade function found here: https://stackoverflow.com/questions/6121203/how-to-do-fade-in-and-fade-out-with-javascript-and-css
 function fade(element) {
     var op = 1;  // initial opacity
     var timer = setInterval(function () {
@@ -55,37 +49,33 @@ function fade(element) {
     }, 200);
 }
 
-// Comments as a js object
-let comments = {};
-
-// With thanks to the MDN web docs page found here: https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Objects/JSON for an overview of how to implement this
-function display_dropzone() {
+// Display jumbotron data
+function displayDropzone() {
     // Fetch value of dropzone name selected by user
     let requestURL;
-    let postfix = null;
     let selectedDz = document.getElementById('dropdown').value;
     switch(selectedDz) {
         case selectedDz = 'skydive_madrid':
-            postfix = 1;
+            postfix = 0;
             break;
         case selectedDz = 'goskydive':
-            postfix = 2;
+            postfix = 1;
             break;
         case selectedDz = 'skyhigh':
-            postfix = 3;
+            postfix = 2;
             break;
         case selectedDz = 'skydive_egypt':
-            postfix = 4;
+            postfix = 3;
             break;
         case selectedDz = 'skydive_belize':
-            postfix = 5;
+            postfix = 4;
             break;
         case selectedDz = 'skydive_maldives':
-            postfix = 6;
+            postfix = 5;
             break;
     }
 
-    requestURL = route + '/fetchDropzone/' + postfix;
+    requestURL = address + '/fetchDropzone/' + postfix;
 
     if (postfix !== null) {
         fetchEntities(requestURL);
@@ -93,12 +83,15 @@ function display_dropzone() {
     
 }
 
-// Populate dropzone div with object content retrieved from JSON file
+/**
+ * Populate dropzone div with Dropzone and Comment entities retrieved from JSON file
+ * @param {string} requestURL is the URL used for a GET request for Dropzone entity
+ */
 async function fetchEntities(requestURL) {
     try {
         // Send request for selected dropzone to server
         const data = await fetch(requestURL);
-        const retrievedDropzone = await data.json();
+        retrievedDropzone = await data.json();
 
         // Fill all fields in the Dropzone entity container
         fillDropzoneInfo(retrievedDropzone);
@@ -115,8 +108,7 @@ async function fetchEntities(requestURL) {
         response.statusCode = 404;
         response.end;
         */
-    }
-    
+    } 
 }
 
 /**
@@ -161,12 +153,13 @@ function populateComments(commentEntity) {
     }
 }
 
-async function post_test_comment() {
-    const username = document.getElementById('testusername_input').value;
-    const comment = document.getElementById('testcomment_input').value;
-    if (comment !== "" && username !== "") {
-        try {
-            const res = await fetch(address, {
+async function newComment() {
+    const username = document.getElementById('username_input').value;
+    const comment = document.getElementById('comment_input').value;
+    if (comment !== "" && username !== "") { 
+        route = address + '/postComment/' + postfix;
+        try {          
+            const res = await fetch(route, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
@@ -174,70 +167,27 @@ async function post_test_comment() {
                 body: JSON.stringify({username: username, comment: comment})
             });
 
-            
-            
             // Update comment box if submission sucsessful
             if (res.status === 200) {
-                populate_comments(commentURL);
-                display_submission_result('test_submission_msg', true);
+                //populateComments();
+                displaySubmissionResult('commentSubmissionMsg', true);
             } else {
                 alert('Error Creating Comment', await response.text());
-                display_submission_result('test_submission_msg', false);
+                displaySubmissionResult('commentSubmissionMsg', false);
             }
-
         } catch (e) {
-            console.log('Error: sever connection not established');
+            alert('Error: sever connection not established');
         }
 
-        document.getElementById('test_box').reset();
-    }
-    
+        // Reset jumbotron body content
+        document.getElementById('submit_comment').reset();
+        document.getElementById('location').src = "";
 
-    /*
-        // Add username and comment as new key:value pair to comment object
-        //comments.username = comment;
-        // Update comment box     
-        // Append new key:value pair to array and save as JSON
-        // Read new JSON file into comment box 
-    */
-}
-
-
-async function submit_comment(commentURL) {
-    const username = document.getElementById('username_input').value;
-    const comment = document.getElementById('comment_input').value;
-    
-    if (comment !== "" && username !== "") {
-        try {
-            alert("TESTING URL: " + address + commentURL);
-            const res = await fetch(address + commentURL, {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify({username: comment})
-            });
-
-            if (response.status === 200) {
-                // Post comment
-            } else {
-                showAlert('Error Creating Comment', await response.text());
-            }
-
-        } catch (e) {
-            console.log('Error: sever connection not established');
-        }
-        
-        
-        // Add username and comment as new key:value pair to comment object
-        //comments.username = comment;
-        // Update comment box     
-        // Append new key:value pair to array and save as JSON
-        // Read new JSON file into comment box
+        alert('were even at the form reset part');
     }
 }
 
-function remove_comment() {
+function clearComment() {
     //document.getElementById('comment_field').value = "";
 }
 
