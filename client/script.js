@@ -54,10 +54,10 @@ function displayDropzone() {
 
     requestURL = address + '/fetchDropzone/' + postfix;
 
+
     if (postfix !== null) {
         fetchEntities(requestURL);
     }
-    
 }
 
 /**
@@ -66,9 +66,9 @@ function displayDropzone() {
  */
 async function fetchEntities(requestURL) {
     try {
-        // Send request for selected dropzone to server
         const data = await fetch(requestURL);
         retrievedDropzone = await data.json();
+
 
         // Fill all fields in the Dropzone entity container
         fillDropzoneInfo(retrievedDropzone);
@@ -85,7 +85,7 @@ async function fetchEntities(requestURL) {
         response.statusCode = 404;
         response.end;
         */
-    } 
+    }
 }
 
 /**
