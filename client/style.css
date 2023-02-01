@@ -175,3 +175,8 @@ li {
 #comment_list {
     list-style: none;
 }
+
+.submissionMsg {
+    padding: 0;
+    margin: 0;
+}

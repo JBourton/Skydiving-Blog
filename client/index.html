@@ -68,12 +68,12 @@
                 <!--The comment section-->
                 <div class="comments">
                     <!-- Implementation of comment section based off of youtube tutorial by Mr. Web Designer found here: https://www.youtube.com/watch?v=vsycEiO6Itc -->
-                    <form class="comment_inputs" id="submit_comment" method="POST" action="">
+                    <form class="comment_inputs" id="submit_comment" method="POST" action="/">
                         <h4 id="comment_title">Add a comment</h4>
                         <input type="text" name="username" class="comment_field" id="username_input" placeholder="Enter username...">
-                        <input type="text" name="comment" class="comment_field" id="comment_input" placeholder="Your comment...">
-                        <button class="custom_btn" id="submit_btn">Submit</button>
-                        <button class="custom_btn" id="clear_btn">Clear</button>
+                        <input type="text" name="comment" class="comment_field" id="comment_input" placeholder="Your comment...">             
+                        <input type="submit" class="custom_btn" id="submit_btn" value="Submit">
+                        <input type="button" class="custom_btn" id="clear_btn" value="Clear">
                         <div class="submissionMsg">
                             <p id="commentSubmissionMsg"></p>
                         </div>
@@ -90,7 +90,7 @@
                     <form class="comment_inputs" method="GET" action="">
                         <h4 id="comment_title">Search for a comment</h4>
                         <input type="text" name="lookup" class="comment_field" placeholder="Enter keyword...">
-                        <button class="custom_btn" id="search_comment">Search</button>
+                        <input type="button" class="custom_btn" id="search_comment" value="Search">
                     </form>
                 </div>  
             </div>

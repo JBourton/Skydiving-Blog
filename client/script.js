@@ -11,8 +11,9 @@ document.addEventListener('DOMContentLoaded', () => {
     // Add event listenters to button that loads dropzone entity information
     document.querySelector('#dz_selector').addEventListener('click', displayDropzone);
 
-    // Add event listener for button that submits a new comment
-    document.querySelector('#submit_btn').addEventListener('click', async () => {
+    // Add event listner for comment submission form
+    document.querySelector('#submit_comment').addEventListener('submit', async (e) => {
+        e.preventDefault();
         newComment();
     });
 
@@ -23,6 +24,7 @@ document.addEventListener('DOMContentLoaded', () => {
 // Displays either succsess or error message for attempted form submission
 function displaySubmissionResult(elemID, success) {
     message = document.getElementById(elemID);
+    alert('Display the green sucsess message');
     if (success) {
         message.innerHTML = "Submission successful!";
         message.style.color = "green";
@@ -142,6 +144,9 @@ function fillDropzoneInfo(dropzoneEntity) {
 
 // Populate comment box using AJAX upon dropzone selection
 function populateComments(commentEntity) {
+    // Clear comment box
+    document.getElementById('comment_list').innerHTML = "";
+
     // Iterate through each key:value pair in object and add to comment box
     for (const key in commentEntity) {
         if (commentEntity.hasOwnProperty(key)) {
@@ -167,11 +172,13 @@ async function newComment() {
                 body: JSON.stringify({username: username, comment: comment})
             });
 
-            // Update comment box if submission sucsessful
+            // Update comment box and display sucsess message if submission sucsessful
             if (res.status === 200) {
-                //populateComments();
+                const returnedComments = await res.json();
+                populateComments(returnedComments);
                 displaySubmissionResult('commentSubmissionMsg', true);
             } else {
+                // Inform user of unsucsessful post
                 alert('Error Creating Comment', await response.text());
                 displaySubmissionResult('commentSubmissionMsg', false);
             }
@@ -181,14 +188,12 @@ async function newComment() {
 
         // Reset jumbotron body content
         document.getElementById('submit_comment').reset();
-        document.getElementById('location').src = "";
-
-        alert('were even at the form reset part');
     }
 }
 
 function clearComment() {
-    //document.getElementById('comment_field').value = "";
+    document.getElementById('username_input').value = "";
+    document.getElementById('comment_input').value = "";   
 }
 
 // Should display a (reusable) dissapearing error message
