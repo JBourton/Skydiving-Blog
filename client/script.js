@@ -117,7 +117,7 @@ function fillDropzoneInfo(dropzoneEntity) {
      document.getElementById('contacts').innerHTML = dropzoneEntity.dz_contacts;
 }
 
-// Populate comment box using AJAX upon dropzone selection
+
 function populateComments(commentEntity) {
     // Clear comment box
     document.getElementById('comment_list').innerHTML = "";
