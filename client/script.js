@@ -3,7 +3,7 @@ const port = 8080;
 const address = 'http://127.0.0.1:'+port;
 
 // ID number of the currently selected dropzone
-let postfix;
+let postfix = null;
 let retrievedDropzone;
 
 // Setup event listeners on page buttons
@@ -19,37 +19,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Add event listener and function for button that removes text currently in comment input field
     document.querySelector('#clear_btn').addEventListener('click', clearComment);
+
+    // Add event listner for submit of search form
+    document.querySelector('#searchForm').addEventListener('submit', async () => {
+        commentSearch();
+    });
 })
-
-// Displays either succsess or error message for attempted form submission
-function displaySubmissionResult(elemID, success) {
-    message = document.getElementById(elemID);
-    alert('Display the green sucsess message');
-    if (success) {
-        message.innerHTML = "Submission successful!";
-        message.style.color = "green";
-        fade(message);
-    } else {
-        message.innerHTML = "Form submission error";
-        message.style.color = "red";
-        fade(message);
-    }
-    
-}
-
-// With thanks to stack overflow user Ibu for use of fade function found here: https://stackoverflow.com/questions/6121203/how-to-do-fade-in-and-fade-out-with-javascript-and-css
-function fade(element) {
-    var op = 1;  // initial opacity
-    var timer = setInterval(function () {
-        if (op <= 0.1){
-            clearInterval(timer);
-            element.style.display = 'none';
-        }
-        element.style.opacity = op;
-        element.style.filter = 'alpha(opacity=' + op * 100 + ")";
-        op -= op * 0.1;
-    }, 200);
-}
 
 // Display jumbotron data
 function displayDropzone() {
@@ -139,7 +114,6 @@ function fillDropzoneInfo(dropzoneEntity) {
 
      // Populate contacts list
      document.getElementById('contacts').innerHTML = dropzoneEntity.dz_contacts;
-
 }
 
 // Populate comment box using AJAX upon dropzone selection
@@ -161,6 +135,7 @@ function populateComments(commentEntity) {
 async function newComment() {
     const username = document.getElementById('username_input').value;
     const comment = document.getElementById('comment_input').value;
+    let success;
     if (comment !== "" && username !== "") { 
         route = address + '/postComment/' + postfix;
         try {          
@@ -172,23 +147,117 @@ async function newComment() {
                 body: JSON.stringify({username: username, comment: comment})
             });
 
-            // Update comment box and display sucsess message if submission sucsessful
             if (res.status === 200) {
+                // Update comment box and inform user upon sucsessful post
                 const returnedComments = await res.json();
                 populateComments(returnedComments);
-                displaySubmissionResult('commentSubmissionMsg', true);
+                success = true;
+                //displaySubmissionResult('commentSubmissionMsg', true);
             } else {
                 // Inform user of unsucsessful post
                 alert('Error Creating Comment', await response.text());
-                displaySubmissionResult('commentSubmissionMsg', false);
+                success = false;
+                //displaySubmissionResult('commentSubmissionMsg', false);
             }
+
+            displaySubmissionResult('commentSubmissionMsg', success);
         } catch (e) {
             alert('Error: sever connection not established');
         }
-
-        // Reset jumbotron body content
+       
+        // Reset comment container content
         document.getElementById('submit_comment').reset();
     }
+}
+
+/**
+ * Inform the user if their comment submission was sucsessful or not
+ * @param {string} elemID The ID of the element that displays the message
+ * @param {boolean} success Whether the POST request was sucsessful or not
+ */
+function displaySubmissionResult(elemID, success) {
+    message = document.getElementById(elemID);
+    
+    if (success) {
+        message.innerHTML = "Submission successful!";
+        message.style.color = "green";
+        fade(message);
+    } else {
+        message.innerHTML = "Submission unsuccessful, an error has occured";
+        message.style.color = "red";
+        fade(message);
+    }
+    
+}
+
+// Search for a user-defined pattern sequence in a comment box
+async function commentSearch() {
+    // Only send GET request if a dropzone has been selected
+    if (postfix !== null) {
+        // Make GET request
+        try {
+            // Fetch key word input
+            const keyWord = document.getElementById('lookup_field').value;
+            alert("keyWord: " + keyWord);
+            alert("typeof(keyWord) " + typeof(keyWord));
+            
+            // Sanitise input
+            if (validateSearchInput(keyWord)) {
+                route = address + '/searchWord/' + keyWord + '/' + postfix;
+
+                alert('keyword passed checks, now to route at ' + route);
+
+                fetch(route)
+                .then(response => response.text())
+                .then(html => alert(html));
+            };
+
+            
+        } catch (e) {
+            alert('Error: sever connection not established');
+        }
+        
+        // Reset input field:
+        keyWord.reset();
+
+        //fetch('www.example.com/document.html')
+        //.then(response => response.text()) // Read the response as text
+        //.then(html => alert(html)); // Alert the retrieved HTML content
+    }   
+}
+
+/**
+ * Check that the user input conforms to a set of predefined rules
+ * @param {string} userInput The input to validate
+ * @throws {userException} Inform the user of an error
+ * @returns {boolean} True if user input is valid
+ */
+function validateSearchInput(userInput) {
+    // Input can only be 1 word - thanks to simonberry on stack overflow for this code snippet (https://stackoverflow.com/questions/25344603/javascript-check-if-value-has-at-least-2-or-more-words)
+    if (userInput.trim().indexOf(' ') != -1) {        //there is at least one space, excluding leading and training spaces
+        throw new userException('Invalid input', 'More than 1 word');
+    }
+
+    // Input cannot contain HTML tag characters
+    if (userInput.includes('>') || userInput.includes('<')) {
+        throw new userException('Invalid input', "HTML tags not permitted");
+    }
+
+    return true;
+}
+
+// With thanks to stack overflow user Ibu for use of fade function found here: https://stackoverflow.com/questions/6121203/how-to-do-fade-in-and-fade-out-with-javascript-and-css
+function fade(element) {
+    var op = 1;  // initial opacity
+    var timer = setInterval(function () {
+        if (op <= 0.1){
+            clearInterval(timer);
+            element.style.display = 'none';
+        }
+        element.style.opacity = op;
+        element.style.filter = 'alpha(opacity=' + op * 100 + ")";
+        op -= op * 0.1;
+    }, 200);
 }
 
 function clearComment() {
@@ -197,6 +266,6 @@ function clearComment() {
 }
 
 // Should display a (reusable) dissapearing error message
-function display_error(title, msg) {
-
+function userException(title = "Error", msg = "Undefined") {
+    alert(title + ": " + msg);
 }

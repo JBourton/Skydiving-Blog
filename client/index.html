@@ -74,10 +74,9 @@
                         <input type="text" name="comment" class="comment_field" id="comment_input" placeholder="Your comment...">             
                         <input type="submit" class="custom_btn" id="submit_btn" value="Submit">
                         <input type="button" class="custom_btn" id="clear_btn" value="Clear">
-                        <div class="submissionMsg">
-                            <p id="commentSubmissionMsg"></p>
-                        </div>
                     </form>
+
+                    <div class="submissionMsg" id="commentSubmissionMsg"></div>
                     
                     <div id="commentbox_container">
                         <div id="comment_box">
@@ -87,10 +86,10 @@
                         <button class="custom_btn" id="delete_btn">Delete</button>
                     </div>
                     
-                    <form class="comment_inputs" method="GET" action="">
+                    <form class="comment_inputs" id="searchForm" method="GET" action="/">
                         <h4 id="comment_title">Search for a comment</h4>
-                        <input type="text" name="lookup" class="comment_field" placeholder="Enter keyword...">
-                        <input type="button" class="custom_btn" id="search_comment" value="Search">
+                        <input type="text" name="lookup" class="comment_field" id="lookup_field" placeholder="Enter keyword...">
+                        <input type="submit" class="custom_btn" id="search_comment" value="Search">
                     </form>
                 </div>  
             </div>

@@ -23,7 +23,14 @@
                 "FlyByTheWay": "Testing comment",
                 "14bourtonjos": "Another thing about jumps",
                 "$$$person": "I can afford the gear haha",
-                "whytho": "why bother commenting, right?"
+                "whytho": "why bother commenting, right?",
+                "bluebackpack": "I wanna use my new helmet cam over this place",
+                "publicspeaker": "I can tell you a thing or two young man",
+                "backpacker": "is the area good to travel in?",
+                "serialAnswerer": "why yes, it is!",
+                "WeCommentLikeMad": "Another comment, I'm spamming! DDOS time haha",
+                "DDOSguy": "Spammm",
+                "anotherSpammer": "I don't even like skydiving lmao"
             }
         },
         {
@@ -42,7 +49,9 @@
             "dz_contacts": "<li>Website: <a href='https://www.goskydive.com/'>https://www.goskydive.com/</a></li><li>Email: <a href='mailto:info@goskydive.com'>info@goskydive.com></a></li><li>Telephone: <a href='tel:+441722568604'>01722 568604</a></li><li><a href='https://www.instagram.com/goskydiveuk/'>Instagram</a></li>",
             "comments": {
                 "BegruntledCustomer": "Some pretty sketchy business practices here...",
-                "Tandem-Man": "whooooo what a place :))))"
+                "Tandem-Man": "whooooo what a place :))))",
+                "Stonehenge fanboy": "Did you know, Stonehenge is almost below you as you skydive here - cool right?",
+                "Geeky Guy": "There's lot of super interesting military history here, that's why I'm going next summer!"
             }
         },
         {
@@ -62,7 +71,9 @@
             "comments": {
                 "John Locke": "I love that this is right in our back yard",
                 "Ryan Goslino": "Go County Durham!!!",
-                "FlyByTheWay": "We're back, with another episode of cool places to jump!"
+                "FlyByTheWay": "We're back, with another episode of cool places to jump!",
+                "InquisitiveCat": "So, how do you get here? Bus? Parachute landing?",
+                "14bourtonjos": "This will be such a cool place to jump this year!"
             }
         },
         {
@@ -83,7 +94,12 @@
                 "Old Giza": "We LOVE the pyramids!",
                 "Swooping cool": "I wanna pond swoop with my .108 'chute here dude!",
                 "Mummy": "Scary mummy person",
-                "Hal-O-Ween": "My name is Hal"
+                "Hal-O-Ween": "My name is Hal",
+                "Nerd.": "How do you even build those things!?",
+                "Naow": "Yee-hahh! Egypt here we come buddy",
+                "Less go": "Epic place that",
+                "PuppyEyes": "But... I can't pay for that!",
+                "DurhamAbroad": "I'll go here because Rah"
             }
         },
         {
@@ -123,8 +139,9 @@
             "comments": {
                 "TunnelFlyer": "I would love a wind tunnel right there",
                 "BeachyCool": "I wanna swim here, so prettyyyyyy",
-                "FlyByTheWay": "Yoooo!",
-                "madCommenter": "I strike again!"
+                "FlyByTheWay": "I actually must go here",
+                "madCommenter": "I strike again!",
+                "JamONcroissant": "What's the food like here then?"
             }
         }
     ]

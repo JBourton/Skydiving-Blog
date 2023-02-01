@@ -26,6 +26,21 @@ app.get('/fetchDropzone/:dzNum', function (req, resp) {
   resp.send(dz);
 })
 
+// Send back a comment if keyword is found
+app.get('/searchWord/:keyword/:dzNum', function(req, resp) {
+  const dzNum = req.params.dzNum;
+  const searchWord = req.params.keyword;
+  const dz = dropzoneFile.entities[dzNum];
+  let matchingComment;
+
+  // Get comments for dzNum and search them for relevant comments
+  let commentSection = dropzoneFile.entities[dzNum].comments;
+  console.log("typeof(commentSection): " + typeof(commentSection));
+
+
+  resp.send(searchWord);
+})
+
 
 app.post('/postComment/:dzNum', function (req, resp) {
   //  console.log(req.body);
@@ -35,29 +50,13 @@ app.post('/postComment/:dzNum', function (req, resp) {
   
   // Update value of comment object with new comment
   let commentSection = dropzoneFile.entities[dzNum].comments;
-  
-  
-  // Just the . part for .username isn't working
   commentSection[username] = comment;
-  
-
   dropzoneFile.entities[dzNum].comments = commentSection;
-
-  console.log(dropzoneFile.entities[dzNum].comments);
- 
-  /*
-  let comments = Object.values(commentSection);
-  comments.username = comment;
-
-  console.log("comments: " + comments);
-  console.log("typeof comments: " + typeof(comments));
-  */
 
   // With thanks to stack overflow user Seth for information on how to create the writeJSON function https://stackoverflow.com/questions/10685998/how-to-update-a-value-in-a-json-file-and-save-it-through-node-js
   fs.writeFile(fileName, JSON.stringify(dropzoneFile, null, 4), function writeJSON(err) {
     if (err) return console.log(err);
-    //console.log(JSON.stringify(dropzoneFile));
-    console.log('writing to ' + fileName);
+    console.log('writing ' + dropzoneFile.entities[dzNum].comments + ' to: ' + fileName);
   });
 
   resp.send(dropzoneFile.entities[dzNum].comments);
