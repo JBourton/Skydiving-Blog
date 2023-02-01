@@ -78,27 +78,19 @@
 
                     <div class="submissionMsg" id="commentSubmissionMsg"></div>
                     
-                    <div class="commentbox_container">
-                        <div class="comment_box">
+                    <div id="commentbox_container">
+                        <div id="comment_box">
                             <ul id="comment_list"></ul>                           
                         </div>
                         <br>
                         <button class="custom_btn" id="delete_btn">Delete</button>
                     </div>
                     
-                    <div id="searchCommentContainer">
-                        <form class="comment_inputs" id="searchForm" method="GET" action="/">
-                            <h4 id="comment_title">Search for a comment</h4>
-                            <input type="text" name="lookup" class="comment_field" id="lookup_field" placeholder="Enter keyword...">
-                            <input type="submit" class="custom_btn" id="search_comment" value="Search">
-                        </form>
-                        <div class="commentbox_container">
-                            <div class="comment_box" id="fetched_comments">
-                                <ul id="fetched_comment_list"></ul>
-                            </div>
-                        </div>
-                    </div>
-                    
+                    <form class="comment_inputs" id="searchForm" method="GET" action="/">
+                        <h4 id="comment_title">Search for a comment</h4>
+                        <input type="text" name="lookup" class="comment_field" id="lookup_field" placeholder="Enter keyword...">
+                        <input type="submit" class="custom_btn" id="search_comment" value="Search">
+                    </form>
                 </div>  
             </div>
         </div>

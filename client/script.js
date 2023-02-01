@@ -21,8 +21,7 @@ document.addEventListener('DOMContentLoaded', () => {
     document.querySelector('#clear_btn').addEventListener('click', clearComment);
 
     // Add event listner for submit of search form
-    document.querySelector('#searchForm').addEventListener('submit', async (e) => {
-        e.preventDefault();
+    document.querySelector('#searchForm').addEventListener('submit', async () => {
         commentSearch();
     });
 })
@@ -199,24 +198,27 @@ async function commentSearch() {
         try {
             // Fetch key word input
             const keyWord = document.getElementById('lookup_field').value;
+            alert("keyWord: " + keyWord);
+            alert("typeof(keyWord) " + typeof(keyWord));
             
             // Sanitise input
             if (validateSearchInput(keyWord)) {
                 route = address + '/searchWord/' + keyWord + '/' + postfix;
 
-                alert('keyword ' + keyWord + ' passed checks, now to route at ' + route);
+                alert('keyword passed checks, now to route at ' + route);
 
                 fetch(route)
                 .then(response => response.text())
                 .then(html => alert(html));
+            };
 
-            };           
+            
         } catch (e) {
-            alert('Error: server connection not established');
+            alert('Error: sever connection not established');
         }
         
         // Reset input field:
-        document.getElementById('lookup_field').value = null;
+        keyWord.reset();
 
         //fetch('www.example.com/document.html')
         //.then(response => response.text()) // Read the response as text

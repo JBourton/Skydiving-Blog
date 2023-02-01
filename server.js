@@ -31,22 +31,14 @@ app.get('/searchWord/:keyword/:dzNum', function(req, resp) {
   const dzNum = req.params.dzNum;
   const searchWord = req.params.keyword;
   const dz = dropzoneFile.entities[dzNum];
-  let matchingComments = [];
+  let matchingComment;
 
   // Get comments for dzNum and search them for relevant comments
   let commentSection = dropzoneFile.entities[dzNum].comments;
+  console.log("typeof(commentSection): " + typeof(commentSection));
 
-  // Search comments of relevant dropzone and return if match in any key or value
-  for (const key in commentSection) {
-    if (commentSection.hasOwnProperty(key)) {
-        if (key.includes(searchWord) || commentSection[key].includes(searchWord)) {        
-          matchingComments.push(`${key}: ${commentSection[key]}`);
-        }      
-    }
-  }
 
-  // Send back list of matching comments, or empty list if none found
-  resp.send(matchingComments);
+  resp.send(searchWord);
 })
 
 
