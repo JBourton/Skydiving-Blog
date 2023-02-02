@@ -21,7 +21,8 @@ document.addEventListener('DOMContentLoaded', () => {
     document.querySelector('#clear_btn').addEventListener('click', clearComment);
 
     // Add event listner for submit of search form
-    document.querySelector('#searchForm').addEventListener('submit', async () => {
+    document.querySelector('#searchForm').addEventListener('submit', async (e) => {
+        e.preventDefault();
         commentSearch();
     });
 })
@@ -77,7 +78,7 @@ async function fetchEntities(requestURL) {
         retrievedComments = retrievedDropzone.comments;
 
         // Populate comment box
-        populateComments(retrievedComments);
+        populateComments(retrievedComments, 'comment_list');
 
     } catch(e) {
         alert(e);
@@ -117,14 +118,21 @@ function fillDropzoneInfo(dropzoneEntity) {
 }
 
 
-function populateComments(commentEntity) {
-    // Clear comment box
-    document.getElementById('comment_list').innerHTML = "";
-
+function populateComments(commentEntity, box_id) {
     // Iterate through each key:value pair in object and add to comment box
+    let comment_list = document.getElementById(box_id);
+    // Clear comment box
+    comment_list.innerHTML = '';
+
+    // Populate comment box with message if there are no comments to display
+    if (Object.keys(commentEntity).length === 0) {
+        let no_comments = document.createElement("li");
+        comment_list.appendChild(no_comments);
+        no_comments.innerHTML = "No comments to display";
+    }
+
     for (const key in commentEntity) {
-        if (commentEntity.hasOwnProperty(key)) {
-            let comment_list = document.getElementById("comment_list");
+        if (commentEntity.hasOwnProperty(key)) {         
             let next_comment = document.createElement("li");
             comment_list.appendChild(next_comment);
             next_comment.innerHTML = `${key}: ${commentEntity[key]}`
@@ -150,7 +158,7 @@ async function newComment() {
             if (res.status === 200) {
                 // Update comment box and inform user upon sucsessful post
                 const returnedComments = await res.json();
-                populateComments(returnedComments);
+                populateComments(returnedComments, 'comment_list');
                 success = true;
                 //displaySubmissionResult('commentSubmissionMsg', true);
             } else {
@@ -194,22 +202,21 @@ function displaySubmissionResult(elemID, success) {
 async function commentSearch() {
     // Only send GET request if a dropzone has been selected
     if (postfix !== null) {
+        // Fetch key word input
+        
         // Make GET request
         try {
-            // Fetch key word input
             const keyWord = document.getElementById('lookup_field').value;
-            alert("keyWord: " + keyWord);
-            alert("typeof(keyWord) " + typeof(keyWord));
-            
             // Sanitise input
             if (validateSearchInput(keyWord)) {
                 route = address + '/searchWord/' + keyWord + '/' + postfix;
 
-                alert('keyword passed checks, now to route at ' + route);
+                let fetchedComments;
 
-                fetch(route)
-                .then(response => response.text())
-                .then(html => alert(html));
+                const res = await fetch(route);
+                fetchedComments = await res.json();
+
+                populateComments(fetchedComments, 'search_comments');
             };
 
             
@@ -218,11 +225,7 @@ async function commentSearch() {
         }
         
         // Reset input field:
-        keyWord.reset();
-
-        //fetch('www.example.com/document.html')
-        //.then(response => response.text()) // Read the response as text
-        //.then(html => alert(html)); // Alert the retrieved HTML content
+        document.getElementById('lookup_field').value = null;
     }   
 }
 

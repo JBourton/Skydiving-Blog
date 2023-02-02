@@ -141,13 +141,13 @@ li {
     border-radius: 5px;
 }
 
-#commentbox_container {
+.commentbox_container {
     display: inline-block;
     width: 90%;
     text-align: right; 
 }
 
-#comment_box {
+.comment_box {
     width: 100%;
     height: 50vh;
     background-color: #fffffe;
@@ -159,6 +159,12 @@ li {
     display: inline-block;
     margin-bottom: 2%;
     padding-left: 5%;
+    padding-right: 5%;
+    padding-top: 0;
+}
+
+#searchQuery {
+    height: 30vh;
 }
 
 #delete_btn {
@@ -172,7 +178,7 @@ li {
     margin-bottom: 2%;
 }
 
-#comment_list {
+.listed_comments {
     list-style: none;
 }
 

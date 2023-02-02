@@ -78,9 +78,9 @@
 
                     <div class="submissionMsg" id="commentSubmissionMsg"></div>
                     
-                    <div id="commentbox_container">
-                        <div id="comment_box">
-                            <ul id="comment_list"></ul>                           
+                    <div class="commentbox_container">
+                        <div class="comment_box">
+                            <ul class="listed_comments" id="comment_list"></ul>                           
                         </div>
                         <br>
                         <button class="custom_btn" id="delete_btn">Delete</button>
@@ -91,6 +91,12 @@
                         <input type="text" name="lookup" class="comment_field" id="lookup_field" placeholder="Enter keyword...">
                         <input type="submit" class="custom_btn" id="search_comment" value="Search">
                     </form>
+
+                    <div class="commentbox_container">
+                        <div class="comment_box" id="searchQuery">
+                            <ul class="listed_comments" id="search_comments"></ul>
+                        </div>
+                    </div>
                 </div>  
             </div>
         </div>

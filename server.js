@@ -23,7 +23,6 @@ app.use(express.urlencoded());      // Decode data sent through HTML form
 app.get('/fetchDropzone/:dzNum', function (req, resp) {
   const dzNum = req.params.dzNum;
   const dz = dropzoneFile.entities[dzNum];
-  console.log(dz);
   resp.send(dz);
 })
 
@@ -32,14 +31,21 @@ app.get('/searchWord/:keyword/:dzNum', function(req, resp) {
   const dzNum = req.params.dzNum;
   const searchWord = req.params.keyword;
   const dz = dropzoneFile.entities[dzNum];
-  let matchingComment;
+  let matchingComments = {};
 
   // Get comments for dzNum and search them for relevant comments
   let commentSection = dropzoneFile.entities[dzNum].comments;
-  console.log("typeof(commentSection): " + typeof(commentSection));
-
-
-  resp.send(searchWord);
+  
+  // Search comments of relevant dropzone and return if match in any key or value
+  for (const key in commentSection) {
+    if (commentSection.hasOwnProperty(key)) {
+        if (key.includes(searchWord) || commentSection[key].includes(searchWord)) {        
+          //matchingComments.push(`${key}: ${commentSection[key]}`);
+          matchingComments[key] = commentSection[key];
+        }      
+    }
+  }
+  resp.send(matchingComments);
 })
 
 
