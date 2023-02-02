@@ -1,1 +1,1 @@
-const fizz_buzz = require('./app');
+const app = require('./app');
