@@ -70,7 +70,6 @@ async function fetchEntities(requestURL) {
         const data = await fetch(requestURL);
         retrievedDropzone = await data.json();
 
-
         // Fill all fields in the Dropzone entity container
         fillDropzoneInfo(retrievedDropzone);
 
@@ -236,7 +235,7 @@ async function commentSearch() {
  * @returns {boolean} True if user input is valid
  */
 function validateSearchInput(userInput) {
-    // Input can only be 1 word - thanks to simonberry on stack overflow for this code snippet (https://stackoverflow.com/questions/25344603/javascript-check-if-value-has-at-least-2-or-more-words)
+    // Input can only be 1 word - thanks to simonberry on stack overflow for this code snippet (https://stackoverflow.com/questions/25344603/javascript-check-if-value-has-at-least-2-or-more-words) [Accessed 27/01/23]
     if (userInput.trim().indexOf(' ') != -1) {        //there is at least one space, excluding leading and training spaces
         throw new userException('Invalid input', 'More than 1 word');
     }
@@ -249,7 +248,7 @@ function validateSearchInput(userInput) {
     return true;
 }
 
-// With thanks to stack overflow user Ibu for use of fade function found here: https://stackoverflow.com/questions/6121203/how-to-do-fade-in-and-fade-out-with-javascript-and-css
+// With thanks to stack overflow user Ibu for use of fade function found here: https://stackoverflow.com/questions/6121203/how-to-do-fade-in-and-fade-out-with-javascript-and-css [Accessed 31/01/23]
 function fade(element) {
     var op = 1;  // initial opacity
     var timer = setInterval(function () {

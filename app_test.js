@@ -1,0 +1,1 @@
+const fizz_buzz = require('./app');
