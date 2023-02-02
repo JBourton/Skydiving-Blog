@@ -11,6 +11,11 @@ document.addEventListener('DOMContentLoaded', () => {
     // Add event listenters to button that loads dropzone entity information
     document.querySelector('#dz_selector').addEventListener('click', displayDropzone);
 
+    // Add event listeners for image selection tool
+    // Basically need to fetch selected value
+    
+    document.getElementById('img_selector').addEventListener('click', requestImg)
+
     // Add event listner for comment submission form
     document.querySelector('#submit_comment').addEventListener('submit', async (e) => {
         e.preventDefault();
@@ -127,15 +132,17 @@ function populateGallery(imgEntity, multiple = false, load = false) {
     // Populate image selection dropdown
     if (load) {
         let select = document.getElementById('img_dropdown');
+        let pos = 0;
         for (const key in imgEntity) {
             if (imgEntity.hasOwnProperty(key)) {
-                let newOption = new Option(key, key);
+                let newOption = new Option(key, pos);
                 select.appendChild(newOption, undefined);
+                pos += 1;
             }
         }
-
     }
 
+    // Fetch gallery container div and reset
     let img_gallery = document.getElementById('gallery');
     img_gallery.innerHTML = "";
 
@@ -149,7 +156,6 @@ function populateGallery(imgEntity, multiple = false, load = false) {
     } else {
         newImgContainer = createImage(imgEntity, Object.keys(imgEntity)[0], img_gallery); 
     }
-
 }
 
 /**
@@ -163,21 +169,59 @@ function createImage(imgEntity, key, gallery) {
     let newImgContainer = document.createElement("div");
     newImgContainer.className = 'gallery_img';
 
-    // Create image and append
+    // Create image and append to document
     let newImg = document.createElement("img");
     newImg.className = 'img-fluid';
-    newImg.src = key;
+    newImg.src = imgEntity[key];
     newImgContainer.appendChild(newImg);
 
     // Create description and append
     let newDescription = document.createElement("LABEL");
-    newDescription.textContent = imgEntity[key];
+    newDescription.textContent = key;
     newImgContainer.appendChild(newDescription);
 
     // Add newly created image container to document
     gallery.appendChild(newImgContainer);
 }
 
+
+async function requestImg() {
+    alert("Hello World!");
+
+    try {
+        // Fetch user-selected description ready for GET request
+        let commentNum = document.getElementById('img_dropdown').value
+
+        // Reset container div and reset
+        let img_gallery = document.getElementById('gallery');
+        img_gallery.innerHTML = "";
+
+        // Fetch img description for given description
+        let fetchedImg;
+
+        const route = '/getIMG/' + commentNum + '/' + postfix;
+        alert("route: " + route);
+
+        const res = await fetch(route);
+        alert("res: " + res);
+        /*
+        
+        text = await res.text;
+        alert(text);
+        */
+        fetchedImg = await res.json();
+
+        alert(fetchedImg);
+        // Add retrieved image to document - note: need to parse an object as a param here
+        createImage(fetchedImg)
+
+        // Reset dropdown
+       //document.getElementById('img_dropdown').innerHTML = null;
+    } catch (e) {
+        alert(e);
+    }
+    
+}
 
 function populateComments(commentEntity, box_id) {
     // Iterate through each key:value pair in object and add to comment box
@@ -262,11 +306,10 @@ function displaySubmissionResult(elemID, success) {
 // Search for a user-defined pattern sequence in a comment box
 async function commentSearch() {
     // Only send GET request if a dropzone has been selected
-    if (postfix !== null) {
-        // Fetch key word input
-        
+    if (postfix !== null) {     
         // Make GET request
         try {
+            // Fetch key word input
             const keyWord = document.getElementById('lookup_field').value;
             // Sanitise input
             if (validateSearchInput(keyWord)) {

@@ -30,7 +30,6 @@ app.get('/fetchDropzone/:dzNum', function (req, resp) {
 app.get('/searchWord/:keyword/:dzNum', function(req, resp) {
   const dzNum = req.params.dzNum;
   const searchWord = req.params.keyword;
-  const dz = dropzoneFile.entities[dzNum];
   let matchingComments = {};
 
   // Get comments for dzNum and search them for relevant comments
@@ -40,13 +39,12 @@ app.get('/searchWord/:keyword/:dzNum', function(req, resp) {
   for (const key in commentSection) {
     if (commentSection.hasOwnProperty(key)) {
         if (key.includes(searchWord) || commentSection[key].includes(searchWord)) {        
-          //matchingComments.push(`${key}: ${commentSection[key]}`);
           matchingComments[key] = commentSection[key];
         }      
     }
   }
   resp.send(matchingComments);
-})
+});
 
 
 app.post('/postComment/:dzNum', function (req, resp) {
@@ -69,9 +67,32 @@ app.post('/postComment/:dzNum', function (req, resp) {
   resp.send(dropzoneFile.entities[dzNum].comments);
 });
 
+app.get('/getIMG/:imgNum/:dzNum', function (req, resp) {
+  // Currently not making the required get request
+  console.log("I am the get request you were looking for");
+  const dzNum = req.params.dzNum;
+  const imgNum = req.params.imgNum;
+  let returnIMG = {};
+
+  console.log("dzNum & imgNum: " + dzNum + ' ,' + imgNum);
+
+  // Get images for dzNum and search for matching description
+  let imageSection = dropzoneFile.entities[dzNum].images;
+  console.log(imageSection);
+
+  value = Object.values(imageSection)[imgNum];
+  key = Object.keys(imageSection)[imgNum];
+
+  console.log("key + value: " + key + '   ' + value);
+
+  returnIMG[key] = value;
+  
+
+  resp.send(returnIMG);
+});
 
 app.listen(8080, ()=> {
   console.log("listening on port 8080");
-})
+});
 
 module.exports = app;

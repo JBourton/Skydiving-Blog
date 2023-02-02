@@ -40,20 +40,24 @@ li {
 /* Style dropzone selection */
 .dz_selection {
     padding: 0;
-    width: 90%;
+    width: 100%;
     display: inline-block;
     
 }
 
+
 .dropdown_menu {
+    background-color: #fffffe;
     font-size: 20px;
     color: #8c7851;
+}
+
+#img_selection_menu {
     background-color: #f9f4ef;
-    width: 90%;
 }
 
 #dropdown {
-    width: 60%;
+    width: 50%;
     position: relative;
     height: 5rem;
     text-indent: 1%;
@@ -62,7 +66,6 @@ li {
 #dropdown_lbl {
     padding-right: 1rem;
 }
-
 
 #dz_selector {
     position: absolute;
@@ -111,12 +114,6 @@ li {
     padding: 2rem;
     margin: 0.5rem;   
     text-align: center;
-}
-
-.child_img {
-    display: inline-block;
-    padding: 1rem;
-    width: 40%;
 }
 
 /* Style displayed contents of JSON dropzone object */
