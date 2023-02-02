@@ -125,28 +125,43 @@ function populateGallery(imgEntity, multiple = false) {
     let img_gallery = document.getElementById('gallery');
     img_gallery.innerHTML = "";
 
-    // Display 1 or many images based on bool value of multiple
-
-    for (const key in imgEntity) {
-        if (imgEntity.hasOwnProperty(key)) {
-            // Create container for image and description
-            let newImgContainer = document.createElement("div");
-            newImgContainer.className = 'gallery_img';
-
-            // Create image and append
-            let newImg = document.createElement("img");
-            newImg.className = 'img-fluid';
-            newImg.src = key;
-            newImgContainer.appendChild(newImg);
-
-            // Create description and append
-            let newDescription = document.createElement("LABEL");
-            newDescription.textContent = imgEntity[key];
-            newImgContainer.appendChild()
-            
-            img_gallery.appendChild(newImgContainer);
+    // Display either single image or gallery of images
+    if (multiple) {
+        for (const key in imgEntity) {
+            if (imgEntity.hasOwnProperty(key)) {
+                newImgContainer = createImage(imgEntity, key, img_gallery); 
+            }
         }
+    } else {
+        newImgContainer = createImage(imgEntity, Object.keys(imgEntity)[0], img_gallery); 
     }
+
+}
+
+/**
+ * 
+ * @param {Object} imgEntity The object containg the image urls and their relevant descriptions
+ * @param {string} key The image url
+ * @param {HTML} gallery The HTML gallery element to be updated
+ */
+function createImage(imgEntity, key, gallery) {
+    // Create container for image and description
+    let newImgContainer = document.createElement("div");
+    newImgContainer.className = 'gallery_img';
+
+    // Create image and append
+    let newImg = document.createElement("img");
+    newImg.className = 'img-fluid';
+    newImg.src = key;
+    newImgContainer.appendChild(newImg);
+
+    // Create description and append
+    let newDescription = document.createElement("LABEL");
+    newDescription.textContent = imgEntity[key];
+    newImgContainer.appendChild(newDescription);
+
+    // Add newly created image container to document
+    gallery.appendChild(newImgContainer);
 }
 
 
