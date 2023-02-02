@@ -43,16 +43,7 @@
                 <div class="jumbotron">
                     <h3 id="title">Dropzone Name: </h3>
                     <!-- The src will be changed via a GET request to display the image relating to the selected dropzone -->
-                    <div id="gallery">
-                    <!--
-                        <div class="gallery_img">
-
-                            <img src="" alt="" class="img-fluid" id="dz_img">
-                            <label for="dz_img" id="img_description"></label>                          
-                        </div>
-                    --> 
-                    </div>
-                    
+                    <div id="gallery"></div>                  
                     <h3 class="points"><u>Likes</u></h3>
                     <ul class="indent" id="likes"></ul>
                     <h3 class="points"><u>Dislikes</u></h3>
@@ -75,8 +66,8 @@
                     <div class="comments">
                         <h2 class="title"><u>Photo gallery tool</u></h2>
                         <br>
-                        <div class="dropdown_menu" id="img_selection_menu">
-                            <label for="dropdown" id="select_img_lbl">Select an image</label>
+                        <div class="comment_inputs" id="img_selection_menu">
+                            <h4 class="sub_title">Select an image</h4>
                             <select name="img_dropdown" id="img_dropdown">
                                 <option value="none" selected disabled hidden></option>
                                 <!--Add option tags from fetched json content here-->
@@ -92,7 +83,7 @@
                         </form>
 
                         <div class="comment_inputs" id="display_all">
-                            <h4 class="title"><u>Display drozone image gallery</u></h4>
+                            <h4 class="sub_title">Redisplay entire dropzone image gallery</h4>
                             <button class="custom_btn" id="display_all_btn">Go</button>
                         </div>
                     </div>

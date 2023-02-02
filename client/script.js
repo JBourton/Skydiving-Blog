@@ -75,11 +75,12 @@ async function fetchEntities(requestURL) {
 
         // Fetch images and populate image gallery
         retrievedImages = retrievedDropzone.images;
-        populateGallery(retrievedImages, false);
+        populateGallery(retrievedImages, true, true);
 
         // Fetch comments and populate comment box
         retrievedComments = retrievedDropzone.comments;
         populateComments(retrievedComments, 'comment_list');
+
 
     } catch(e) {
         alert(e);
@@ -93,7 +94,7 @@ async function fetchEntities(requestURL) {
 /**
  * Populate the jumbotron with a particular instance of the Dropzone entity
  * @param {Object} dropzoneEntity The object containing all relvant fields pertaining to the Dropzone entity
- */
+*/
 function fillDropzoneInfo(dropzoneEntity) {
      // Populate title
      document.getElementById('title').innerHTML = dropzoneEntity.name;
@@ -120,8 +121,21 @@ function fillDropzoneInfo(dropzoneEntity) {
  * 
  * @param {Object} imgEntity The object containing image url and description as key value pairs
  * @param {boolean} multiple Determine whether multiple images are to be displayed in gallery view
- */
-function populateGallery(imgEntity, multiple = false) {
+ * @param {boolean} load Determines whether image selection dropdown will be filled out
+*/
+function populateGallery(imgEntity, multiple = false, load = false) {
+    // Populate image selection dropdown
+    if (load) {
+        let select = document.getElementById('img_dropdown');
+        for (const key in imgEntity) {
+            if (imgEntity.hasOwnProperty(key)) {
+                let newOption = new Option(key, key);
+                select.appendChild(newOption, undefined);
+            }
+        }
+
+    }
+
     let img_gallery = document.getElementById('gallery');
     img_gallery.innerHTML = "";
 

@@ -32,6 +32,11 @@ li {
     color: #8c7851;
 }
 
+.sub_title {
+    text-align: left;
+    color: #8c7851;
+}
+
 /* Style dropzone selection */
 .dz_selection {
     padding: 0;
@@ -41,13 +46,10 @@ li {
 }
 
 .dropdown_menu {
-    background-color: #fffffe;
     font-size: 20px;
     color: #8c7851;
-}
-
-#img_selection_menu {
     background-color: #f9f4ef;
+    width: 90%;
 }
 
 #dropdown {
@@ -104,6 +106,19 @@ li {
     height: auto;
 }
 
+#gallery {
+    border: 1px solid black;
+    padding: 2rem;
+    margin: 0.5rem;   
+    text-align: center;
+}
+
+.child_img {
+    display: inline-block;
+    padding: 1rem;
+    width: 40%;
+}
+
 /* Style displayed contents of JSON dropzone object */
 .indent {
     padding-left: 5%;
@@ -130,11 +145,10 @@ li {
 }
 
 .comment_inputs {
-    display: flex;
     text-align: right;
     justify-content: center;
     display: inline-block;
-    letter-spacing: 3px;
+    /* letter-spacing: 3px; */
     width: 90%;
 }
 
@@ -193,7 +207,10 @@ li {
 }
 
 #display_all_btn {
-    text-align: center;
-    margin-right: 45%;
+    display: inline-block;
+}
+
+#img_dropdown {
+    width: 73.7%;
 }
 
