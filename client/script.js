@@ -11,11 +11,6 @@ document.addEventListener('DOMContentLoaded', () => {
     // Add event listenters to button that loads dropzone entity information
     document.querySelector('#dz_selector').addEventListener('click', displayDropzone);
 
-    // Add event listeners for image selection tool
-    // Basically need to fetch selected value
-    
-    document.getElementById('img_selector').addEventListener('click', requestImg)
-
     // Add event listner for comment submission form
     document.querySelector('#submit_comment').addEventListener('submit', async (e) => {
         e.preventDefault();
@@ -30,6 +25,15 @@ document.addEventListener('DOMContentLoaded', () => {
         e.preventDefault();
         commentSearch();
     });
+
+    // Add event listeners for image selection tool    
+    document.getElementById('img_selector').addEventListener('click', requestSingleImg);
+    document.getElementById('display_all_btn').addEventListener('click', requestAllImages);
+    document.getElementById('add_img').addEventListener('submit', async (e) => {
+        e.preventDefault();
+        newImage();
+        
+    })
 })
 
 // Display jumbotron data
@@ -142,15 +146,19 @@ function populateGallery(imgEntity, multiple = false, load = false) {
         }
     }
 
+    // Fetch gallery container div and reset   
+    let img_gallery = document.getElementById('gallery');
+    img_gallery.innerHTML = "";
+
     // Display either single image or gallery of images
     if (multiple) {
         for (const key in imgEntity) {
             if (imgEntity.hasOwnProperty(key)) {
-                newImgContainer = createImage(imgEntity, key); 
+                newImgContainer = createImage(imgEntity, key, img_gallery); 
             }
         }
     } else {
-        newImgContainer = createImage(imgEntity, Object.keys(imgEntity)[0]); 
+        newImgContainer = createImage(imgEntity, Object.keys(imgEntity)[0], img_gallery); 
     }
 }
 
@@ -160,11 +168,7 @@ function populateGallery(imgEntity, multiple = false, load = false) {
  * @param {string} key The image url
  * @param {HTML} gallery The HTML gallery element to be updated
  */
-function createImage(imgEntity, key) {
-    // Fetch gallery container div and reset
-    let img_gallery = document.getElementById('gallery');
-    img_gallery.innerHTML = "";
-
+function createImage(imgEntity, key, gallery) {
     // Create container for image and description
     let newImgContainer = document.createElement("div");
     newImgContainer.className = 'gallery_img';
@@ -181,11 +185,11 @@ function createImage(imgEntity, key) {
     newImgContainer.appendChild(newDescription);
 
     // Add newly created image container to document
-    img_gallery.appendChild(newImgContainer);
+    gallery.appendChild(newImgContainer);
 }
 
-
-async function requestImg() {
+// Requests the url of a single image from the server
+async function requestSingleImg() {
     try {
         // Fetch user-selected description ready for GET request
         let commentNum = document.getElementById('img_dropdown').value
@@ -203,7 +207,7 @@ async function requestImg() {
         fetchedImg = await res.json();
 
         // Add retrieved image to document - note: need to parse an object as a param here
-        createImage(fetchedImg, Object.keys(fetchedImg)[0])
+        createImage(fetchedImg, Object.keys(fetchedImg)[0], img_gallery)
 
         // Reset dropdown
        //document.getElementById('img_dropdown').innerHTML = null;
@@ -212,6 +216,46 @@ async function requestImg() {
     }
     
 }
+
+async function requestAllImages() {
+    try {
+        // Reset container div and reset
+        let img_gallery = document.getElementById('gallery');
+        img_gallery.innerHTML = "";
+
+        route = '/getIMG/getAll/' + postfix;
+
+        const res = await fetch(route);
+        fetchedImages = await res.json();
+
+        populateGallery(fetchedImages, true, false);
+    } catch (e) {
+        alert(e);
+    }
+}
+
+async function newImage() {
+    const imgURL = document.getElementById('img_url').value;
+    const caption = document.getElementById('img_reference').value;
+    let success;
+
+    if (comment !== "" && username !== "") { 
+        route = address + '/postIMG/' + postfix;
+
+        try {
+            const res = await fetch(route, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({caption: caption, imgURL: imgURL})
+            });
+
+
+        }
+    }
+}
+
 
 function populateComments(commentEntity, box_id) {
     // Iterate through each key:value pair in object and add to comment box

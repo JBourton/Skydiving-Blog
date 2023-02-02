@@ -26,7 +26,7 @@ app.get('/fetchDropzone/:dzNum', function (req, resp) {
   resp.send(dz);
 })
 
-// Send back a comment if keyword is found
+// Search for a keyword in a comment and return username pair if found
 app.get('/searchWord/:keyword/:dzNum', function(req, resp) {
   const dzNum = req.params.dzNum;
   const searchWord = req.params.keyword;
@@ -46,7 +46,7 @@ app.get('/searchWord/:keyword/:dzNum', function(req, resp) {
   resp.send(matchingComments);
 });
 
-
+// POST a comment to Dropzones.json and send back updated comment section
 app.post('/postComment/:dzNum', function (req, resp) {
   //  console.log(req.body);
   const dzNum = req.params.dzNum;
@@ -67,6 +67,13 @@ app.post('/postComment/:dzNum', function (req, resp) {
   resp.send(dropzoneFile.entities[dzNum].comments);
 });
 
+// GET all URLs and captions of images related to a particular dropzone
+app.get('/getIMG/getAll/:dzNum', function (req, resp) {
+  const dzNum = req.params.dzNum;
+  resp.send(dropzoneFile.entities[dzNum].images);
+});
+
+// GET a specific URL and caption of a user-selected image related to a specific dropzone
 app.get('/getIMG/:imgNum/:dzNum', function (req, resp) {
   const dzNum = req.params.dzNum;
   const imgNum = req.params.imgNum;
@@ -74,7 +81,6 @@ app.get('/getIMG/:imgNum/:dzNum', function (req, resp) {
 
   // Get images for dzNum and search for matching description
   let imageSection = dropzoneFile.entities[dzNum].images;
-  console.log(imageSection);
 
   // Get key:value pair for matching image, then send to client
   value = Object.values(imageSection)[imgNum];
@@ -83,6 +89,26 @@ app.get('/getIMG/:imgNum/:dzNum', function (req, resp) {
   
   resp.send(returnIMG);
 });
+
+// POST details of a new image to Dropzones.json
+app.post('/postIMG/:dzNum', function(req, resp) {
+  const dzNum = req.params.dzNum;
+  const imgURL = req.params.imgURL;
+  const imgDescription = req.params.imgDescription;
+
+  // Update .images object with new key:value pair
+  let retrievedImages = dropzoneFile.entities[dzNum].images;
+  retrievedImages[imgDescription] = imgURL;
+  dropzoneFile.entities[dzNum].images = retrievedImages;
+
+  fs.writeFile(fileName, JSON.stringify(dropzoneFile, null, 4), function writeJSON(err) {
+    if (err) return console.log(err);
+    console.log('writing ' + dropzoneFile.entities[dzNum].images + ' to: ' + fileName);
+  });
+
+  resp.send(dropzoneFile.entities[dzNum].images);
+})
+
 
 app.listen(8080, ()=> {
   console.log("listening on port 8080");
