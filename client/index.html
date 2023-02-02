@@ -63,13 +63,38 @@
                     <label id="location_lbl" for="location"></label>
                     <h3><u>DZ contact details</u></h3>
                     <ul class="indent" id="contacts"></ul>
+
+                    <div class="comments">
+                        <h2 class="title"><u>Photo gallery tool</u></h2>
+                        <br>
+                        <div class="dropdown_menu" id="img_selection_menu">
+                            <label for="dropdown" id="select_img_lbl">Select an image</label>
+                            <select name="img_dropdown" id="img_dropdown">
+                                <option value="none" selected disabled hidden></option>
+                                <!--Add option tags from fetched json content here-->
+                            </select>
+                            <button class="custom_btn" id="dropdown_selector">Search</button>
+                        </div>
+    
+                        <form id="add_img" class="comment_inputs" method="POST" action="/">
+                            <h4 class="comment_title">Add image</h4>
+                            <input type="text" name="url" class="comment_field" id="img_url" placeholder="Enter image URL...">
+                            <input type="text" name="reference" class="comment_field" id="img_reference" placeholder="Enter image reference...">
+                            <input type="submit" class="custom_btn" id="submit_img_btn" value="Submit">
+                        </form>
+
+                        <div class="comment_inputs" id="display_all">
+                            <h4 class="title"><u>Display drozone image gallery</u></h4>
+                            <button class="custom_btn" id="display_all_btn">Go</button>
+                        </div>
+                    </div>
                 </div>
     
                 <!--The comment section-->
                 <div class="comments">
                     <!-- Implementation of comment section based off of youtube tutorial by Mr. Web Designer found here: https://www.youtube.com/watch?v=vsycEiO6Itc -->
                     <form class="comment_inputs" id="submit_comment" method="POST" action="/">
-                        <h4 id="comment_title">Add a comment</h4>
+                        <h4 class="comment_title">Add a comment</h4>
                         <input type="text" name="username" class="comment_field" id="username_input" placeholder="Enter username...">
                         <input type="text" name="comment" class="comment_field" id="comment_input" placeholder="Your comment...">             
                         <input type="submit" class="custom_btn" id="submit_btn" value="Submit">
@@ -87,7 +112,7 @@
                     </div>
                     
                     <form class="comment_inputs" id="searchForm" method="GET" action="/">
-                        <h4 id="comment_title">Search for a comment</h4>
+                        <h4 class="comment_title">Search for a comment</h4>
                         <input type="text" name="lookup" class="comment_field" id="lookup_field" placeholder="Enter keyword...">
                         <input type="submit" class="custom_btn" id="search_comment" value="Search">
                     </form>
@@ -97,7 +122,7 @@
                             <ul class="listed_comments" id="search_comments"></ul>
                         </div>
                     </div>
-                </div>  
+                </div>
             </div>
         </div>
     </div>

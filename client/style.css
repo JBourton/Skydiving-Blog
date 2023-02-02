@@ -46,6 +46,10 @@ li {
     color: #8c7851;
 }
 
+#img_selection_menu {
+    background-color: #f9f4ef;
+}
+
 #dropdown {
     width: 60%;
     position: relative;
@@ -88,6 +92,7 @@ li {
 
 .jumbotron {
     padding: 0;
+    margin-top: 0;
 }
 
 .jumbotron h3 {
@@ -171,7 +176,7 @@ li {
     display: inline-block;
 }
 
-#comment_title {
+.comment_title {
     text-align: left;
     letter-spacing: 0.1rem;
     color: #8c7851;
@@ -186,3 +191,9 @@ li {
     padding: 0;
     margin: 0;
 }
+
+#display_all_btn {
+    text-align: center;
+    margin-right: 45%;
+}
+
