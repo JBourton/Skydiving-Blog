@@ -142,19 +142,15 @@ function populateGallery(imgEntity, multiple = false, load = false) {
         }
     }
 
-    // Fetch gallery container div and reset
-    let img_gallery = document.getElementById('gallery');
-    img_gallery.innerHTML = "";
-
     // Display either single image or gallery of images
     if (multiple) {
         for (const key in imgEntity) {
             if (imgEntity.hasOwnProperty(key)) {
-                newImgContainer = createImage(imgEntity, key, img_gallery); 
+                newImgContainer = createImage(imgEntity, key); 
             }
         }
     } else {
-        newImgContainer = createImage(imgEntity, Object.keys(imgEntity)[0], img_gallery); 
+        newImgContainer = createImage(imgEntity, Object.keys(imgEntity)[0]); 
     }
 }
 
@@ -164,7 +160,11 @@ function populateGallery(imgEntity, multiple = false, load = false) {
  * @param {string} key The image url
  * @param {HTML} gallery The HTML gallery element to be updated
  */
-function createImage(imgEntity, key, gallery) {
+function createImage(imgEntity, key) {
+    // Fetch gallery container div and reset
+    let img_gallery = document.getElementById('gallery');
+    img_gallery.innerHTML = "";
+
     // Create container for image and description
     let newImgContainer = document.createElement("div");
     newImgContainer.className = 'gallery_img';
@@ -181,13 +181,11 @@ function createImage(imgEntity, key, gallery) {
     newImgContainer.appendChild(newDescription);
 
     // Add newly created image container to document
-    gallery.appendChild(newImgContainer);
+    img_gallery.appendChild(newImgContainer);
 }
 
 
 async function requestImg() {
-    alert("Hello World!");
-
     try {
         // Fetch user-selected description ready for GET request
         let commentNum = document.getElementById('img_dropdown').value
@@ -200,20 +198,12 @@ async function requestImg() {
         let fetchedImg;
 
         const route = '/getIMG/' + commentNum + '/' + postfix;
-        alert("route: " + route);
 
         const res = await fetch(route);
-        alert("res: " + res);
-        /*
-        
-        text = await res.text;
-        alert(text);
-        */
         fetchedImg = await res.json();
 
-        alert(fetchedImg);
         // Add retrieved image to document - note: need to parse an object as a param here
-        createImage(fetchedImg)
+        createImage(fetchedImg, Object.keys(fetchedImg)[0])
 
         // Reset dropdown
        //document.getElementById('img_dropdown').innerHTML = null;
@@ -313,9 +303,8 @@ async function commentSearch() {
             const keyWord = document.getElementById('lookup_field').value;
             // Sanitise input
             if (validateSearchInput(keyWord)) {
-                route = address + '/searchWord/' + keyWord + '/' + postfix;
-
                 let fetchedComments;
+                route = address + '/searchWord/' + keyWord + '/' + postfix;
 
                 const res = await fetch(route);
                 fetchedComments = await res.json();

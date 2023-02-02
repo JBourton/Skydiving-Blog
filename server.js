@@ -68,26 +68,19 @@ app.post('/postComment/:dzNum', function (req, resp) {
 });
 
 app.get('/getIMG/:imgNum/:dzNum', function (req, resp) {
-  // Currently not making the required get request
-  console.log("I am the get request you were looking for");
   const dzNum = req.params.dzNum;
   const imgNum = req.params.imgNum;
   let returnIMG = {};
-
-  console.log("dzNum & imgNum: " + dzNum + ' ,' + imgNum);
 
   // Get images for dzNum and search for matching description
   let imageSection = dropzoneFile.entities[dzNum].images;
   console.log(imageSection);
 
+  // Get key:value pair for matching image, then send to client
   value = Object.values(imageSection)[imgNum];
   key = Object.keys(imageSection)[imgNum];
-
-  console.log("key + value: " + key + '   ' + value);
-
   returnIMG[key] = value;
   
-
   resp.send(returnIMG);
 });
 
