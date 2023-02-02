@@ -93,13 +93,17 @@ app.get('/getIMG/:imgNum/:dzNum', function (req, resp) {
 // POST details of a new image to Dropzones.json
 app.post('/postIMG/:dzNum', function(req, resp) {
   const dzNum = req.params.dzNum;
-  const imgURL = req.params.imgURL;
-  const imgDescription = req.params.imgDescription;
+  const imgURL = req.body.imgURL;
+  const imgDescription = req.body.imgDescription;
+
+  console.log("imgURL & imgDescription: " + imgURL + ' , ' + imgDescription);
 
   // Update .images object with new key:value pair
   let retrievedImages = dropzoneFile.entities[dzNum].images;
   retrievedImages[imgDescription] = imgURL;
   dropzoneFile.entities[dzNum].images = retrievedImages;
+
+  console.log("retrievedImages" + retrievedImages);
 
   fs.writeFile(fileName, JSON.stringify(dropzoneFile, null, 4), function writeJSON(err) {
     if (err) return console.log(err);

@@ -32,7 +32,6 @@ document.addEventListener('DOMContentLoaded', () => {
     document.getElementById('add_img').addEventListener('submit', async (e) => {
         e.preventDefault();
         newImage();
-        
     })
 })
 
@@ -236,23 +235,37 @@ async function requestAllImages() {
 
 async function newImage() {
     const imgURL = document.getElementById('img_url').value;
-    const caption = document.getElementById('img_reference').value;
+    const imgDescription = document.getElementById('img_reference').value;
     let success;
 
-    if (comment !== "" && username !== "") { 
+    if (imgURL !== "" && imgDescription !== "") { 
         route = address + '/postIMG/' + postfix;
-
-        try {
-            const res = await fetch(route, {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify({caption: caption, imgURL: imgURL})
-            });
-
-
+            try {          
+                const res = await fetch(route, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({imgDescription: imgDescription, imgURL: imgURL})
+                });
+            
+            if (res.status === 200) {
+                // Update gallery and inform user upon sucsessful post
+                const returnedImages = await res.json();
+                populateGallery(returnedImages, true, false);
+                success = true;
+            } else {
+                // Inform user of unsucsessful post
+                alert('Error Creating Comment', await response.text());
+                success = false;
+            }
+            displaySubmissionResult('imgSubmissionMsg', success);
+        } catch (e) {
+            alert('Error: sever connection not established');
         }
+       
+        // Reset image container content
+        document.getElementById('add_img').reset();
     }
 }
 
@@ -283,6 +296,7 @@ async function newComment() {
     const username = document.getElementById('username_input').value;
     const comment = document.getElementById('comment_input').value;
     let success;
+
     if (comment !== "" && username !== "") { 
         route = address + '/postComment/' + postfix;
         try {          
@@ -299,12 +313,10 @@ async function newComment() {
                 const returnedComments = await res.json();
                 populateComments(returnedComments, 'comment_list');
                 success = true;
-                //displaySubmissionResult('commentSubmissionMsg', true);
             } else {
                 // Inform user of unsucsessful post
                 alert('Error Creating Comment', await response.text());
                 success = false;
-                //displaySubmissionResult('commentSubmissionMsg', false);
             }
 
             displaySubmissionResult('commentSubmissionMsg', success);
