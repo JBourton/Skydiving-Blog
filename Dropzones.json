@@ -1,11 +1,10 @@
 {
-    "entity_number": 6,
     "entities": [
         {
-            "entityID": "0",
             "name": "Skydive Madrid",
-            "img_url": "assets/dz_images/SkydiveMadridJBourton.jpg",
-            "img_description": "Me taking my AFF course at the sunny Skydive Madrid.",
+            "images" : {
+                "assets/dz_images/SkydiveMadridJBourton.jpg" : "Me taking my AFF course at the sunny Skydive Madrid."
+            },        
             "likes": "<li>Almost always sunny! Jumping all day round, and usually you only have to wait a couple of loads until you can go up again.</li><li>Small DZ where people know each other well. Makes for chill vibes once the final load has landed and you crack open some beers to watch the last part of sunset.</li><li>They make some banging bocadillos in the kitchen (obviously important if you've got your priorities straight)</li>",
             "dislikes": "<li>Shop prices were a bit too high to be reasonable</li><li>Despite having Madrid in the name, you can barely see Madrid from the sky! So don't expect a sweeping view of the city as you climb to altitude, because you won't get it :/</li><li>Surrounding landscape is a bit dry and brown</li><li>Landing area outside of the astroturf is hardened mud - if you have a bad landing, it hurts!</li>",
             "kit_rental": "Yes. A parachute will set you back €21 per jump, and packing costs €5. There are also weight belts for you to borrow to assist you with your fall rate.",
@@ -34,10 +33,10 @@
             }
         },
         {
-            "id": "1",
             "name": "GoSkydive",
-            "img_url": "assets/dz_images/GoSkydiveJBourton.JPG",
-            "img_description": "Me on my first ever skydive, falling over sailsbury and with a very, very confused brain, trying to make sense of why I willingly chose to fall through the sky.",
+            "images" : {
+                "assets/dz_images/GoSkydiveJBourton.JPG" : "Me on my first ever skydive, falling over sailsbury and with a very, very confused brain, trying to make sense of why I willingly chose to fall through the sky."
+            },
             "likes": "<li>You can see stonehenge once under canopy! How cool is that!<li>There are some incredibly experienced instructors working there (as of 2020) that are amazing to learn new skills from!</li><li>Next to an aviation museum with a wealth of history inside of it, that's free to enter as a customer of goskydive, and cheap for all other visitors. If you like planes, then you'll have an amazing time looking around the mueseum. In fact, the dropzone itself was used during WW2 for some critically important missions, which you can learn about on-site.</li><li>The surrounding area of Old Sarum is rich in English heritige, which you can explore after your skydive at your leisure. If you're interested in finding out more about Old Sarum, here's an interesting website: https://www.english-heritage.org.uk/visit/places/old-sarum/history/</li>",
             "dislikes": "<li>In our opinion, this DZ was poorly organised and extremley money-oriented</li><li>It's also very tandem-focused, so change your expectations if you're expecting to be given lots of attention and space throughout the day as a fun jumper.</li>",
             "kit_rental": "Back in 2021, gear rental was temporarilly free for AFF students. However, we are almost certain that this is no longer the case, so we cannot provide a price estimate for this dropzone unfortunately.",
@@ -55,10 +54,10 @@
             }
         },
         {
-            "id": "2",
             "name": "SkyHigh Skydiving",
-            "img_url": "assets/dz_images/Durham.jpg",
-            "img_description": "Photo by <a href='https://unsplash.com/@kamilpphotos?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText'>Kamil Pietrzak</a> on <a href='https://unsplash.com/s/photos/dropzone?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText'>Unsplash</a>",
+            "images" : {
+                "assets/dz_images/Durham.jpg" : "Photo by <a href='https://unsplash.com/@kamilpphotos?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText'>Kamil Pietrzak</a> on <a href='https://unsplash.com/s/photos/dropzone?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText'>Unsplash</a>"
+            },
             "likes": "<li>For starters, it's super near Durham, which means Durham Uni students can go skydiving on the weekends whenever they want - result!</li><li>The owners of this DZ are pretty passionate about the sport themselves and want to foster the spirit of the super sport of skydiving - they hold events every year such as hot air baloon jumping and cool boogies with much better, open-backed planes. We love to see it!</li>",
             "dislikes": "<li>Currently only open Friday to Sunday; what if I have a day off during the week and want to jump!? I can't. Noooooooo!!</li><li>Quite 'out in the sticks' so it will take you a while to get there, especially if you don't have a car (ughhh, worth it though).</li>",
             "kit_rental": "Kit hire is £15 which again, we don't feel that you can complain about. It's a decent amount cheaper than the average English dropzone.",
@@ -77,10 +76,10 @@
             }
         },
         {
-            "id": "3",
             "name": "Skydive Egypt",
-            "img_url": "assets/dz_images/Egypt.jpg",
-            "img_description": "Photo by <a href='https://unsplash.com/@8moments?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText'>Simon Berger</a> on <a href='https://unsplash.com/photos/QxPNDh0_5EQ?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText'>Unsplash</a>",
+            "images" : {
+                "assets/dz_images/Egypt.jpg" : "Photo by <a href='https://unsplash.com/@8moments?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText'>Simon Berger</a> on <a href='https://unsplash.com/photos/QxPNDh0_5EQ?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText'>Unsplash</a>"
+            },
             "likes": "<li>Seeing the Great Pyramids of Giza is a bucket list thing for many of us, but having the opportunity to skydive over them takes it to a whole other level!</li><li>Once you land (in front of the Pyramids!) you will be picked up by a camel and taken back to the DZ. Awesome!</li><li>The aircraft you're jumping from will be a super cool millitary-operated Hercules C-130, which is perhaps one of the coolest planes any skydiver could jump out of. Get you're best Tom Cruise impression ready and prepare for a tactical mission over the Pyramids!</li>",
             "dislikes": "<li>It's incredibly pricey WITHOUT all the other factors included, but once you start looking at the added costs like visas, flights etc you're gonna wanna scream into your pillow because blimeyyyyy it's pricey!</li><li>There's a fair amount of resctriction on the landing area due to the pyramids being a protected site, so you'll have to be super careful where you land.</li>",
             "kit_rental": "No. You will need to bring your own equipment from home unfortunately. You could also rent some before you leave for Egypt.",
@@ -103,10 +102,10 @@
             }
         },
         {
-            "id": "4",
             "name": "Skydive Belize",
-            "img_url": "assets/dz_images/Belize.jpg",
-            "img_description": "Image by <a href='https://www.freepik.com/free-photo/turquoise-blue-texture-fluid-background-with-bubble_4298910.htm#query=belize%20blue%20hole&position=3&from_view=search&track=ais'>Freepik</a>",
+            "images" : {
+                "assets/dz_images/Belize.jpg" : "Image by <a href='https://www.freepik.com/free-photo/turquoise-blue-texture-fluid-background-with-bubble_4298910.htm#query=belize%20blue%20hole&position=3&from_view=search&track=ais'>Freepik</a>"
+            },
             "likes": "<li>This is one of the most desirable jumps in the world to make. Looking down from the plane into the deep blue abyss that is the blue hole is sure to make your jaw drop on your heart sing. How beautiful would that be!?</li><li>You can jump in flip flops and swim shorts if you like - sound pretty liberating to us!</li><li>Once you get picked up by the rescue boat, it takes you straight onto a scuba diving session in the blue hole! How freaking awesome would that be!?</li>",
             "dislikes": "<li>Jumping into the blue hole requires you to perform a water landing. Whilst this is safe enough, with boats on hand ready to pick you up straight after you land in the water, there's a problem.</li><li>Salt water. Salt water is not at all healthy for your skydiving gear, so after just a few jumps you may need to replace your multi-thousand pound 'chute; no thanks!</li><li>mentioned liking that you can jump in flip flops, but the downside to that point is that safety regulations might not be *quite* the same as in Europe - so make sure you know your gear is in tip top condition before you consider jumping here!</li><li>The price is enough to make you want to cry. Understandbly, maybe, because the logistics, equipment and permits (*COUGH*COUGH*bribes*COUGH) involved in this adventure of a lifetime are incredibly expensive for the company, but even so, if this jump is now on your bucket list then start saving now!</li>",
             "kit_rental": "Included in the ticket cost. Just as well, because salt water ruins your gear FAST.",
@@ -123,10 +122,10 @@
             }
         },
         {
-            "id": "5",
             "name": "Skydive Maldives",
-            "img_url": "assets/dz_images/Maldives.jpg",
-            "img_description": "Photo by <a href='https://unsplash.com/@seefromthesky?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText'>Ishan @seefromthesky</a> on <a href='https://unsplash.com/s/photos/maldives?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText'>Unsplash</a>",
+            "images" : {
+                "assets/dz_images/Maldives.jpg" : "Photo by <a href='https://unsplash.com/@seefromthesky?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText'>Ishan @seefromthesky</a> on <a href='https://unsplash.com/s/photos/maldives?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText'>Unsplash</a>"
+            },
             "likes": "<li>THE VIEW!!! LOOK AT THAT VIEW!</li><li>The landing area is the beach - why not swoop down onto the sand and grab a beer from your buddies hand before you hit the ground ;)</li><li>There's plenty of other activities to do outside of skydiving. Why not go scuba diving with sharks, or get your tan going on the beaches? You're in the maldives after all!</li>",
             "dislikes": "<li>200 skydives is a pretty high jump; this place is only for the experienced</li><li>Expensive. The dropzone and the surrounding area will burn a whole in all but the most wealthy skydivers out there :/</li><li>Logicistically it's gonna be a hard one getting together the whole squad for a cheeky maldives trip, but if you can, the reward is absolute eye candy from above!</li>",
             "kit_rental": "We found no trace of this DZ offering equipment rental, so we're gonna go ahead and say nah, they don't offer any. It's unlikely they'd want to ruin their own kit if you make an off-landing in the sea, but bear that one in mind for yourself also.",

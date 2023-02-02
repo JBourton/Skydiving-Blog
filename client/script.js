@@ -73,10 +73,12 @@ async function fetchEntities(requestURL) {
         // Fill all fields in the Dropzone entity container
         fillDropzoneInfo(retrievedDropzone);
 
-        // Fetch comments
-        retrievedComments = retrievedDropzone.comments;
+        // Fetch images and populate image gallery
+        retrievedImages = retrievedDropzone.images;
+        populateGallery(retrievedImages, false);
 
-        // Populate comment box
+        // Fetch comments and populate comment box
+        retrievedComments = retrievedDropzone.comments;
         populateComments(retrievedComments, 'comment_list');
 
     } catch(e) {
@@ -93,10 +95,8 @@ async function fetchEntities(requestURL) {
  * @param {Object} dropzoneEntity The object containing all relvant fields pertaining to the Dropzone entity
  */
 function fillDropzoneInfo(dropzoneEntity) {
-     // Populate title and image fields
+     // Populate title
      document.getElementById('title').innerHTML = dropzoneEntity.name;
-     document.getElementById('dz_img').src = dropzoneEntity.img_url;
-     document.getElementById('img_description').innerHTML = dropzoneEntity.img_description;
 
      // Populate likes / dislikes lists
      document.getElementById('likes').innerHTML = dropzoneEntity.likes;
@@ -114,6 +114,39 @@ function fillDropzoneInfo(dropzoneEntity) {
 
      // Populate contacts list
      document.getElementById('contacts').innerHTML = dropzoneEntity.dz_contacts;
+}
+
+/**
+ * 
+ * @param {Object} imgEntity The object containing image url and description as key value pairs
+ * @param {boolean} multiple Determine whether multiple images are to be displayed in gallery view
+ */
+function populateGallery(imgEntity, multiple = false) {
+    let img_gallery = document.getElementById('gallery');
+    img_gallery.innerHTML = "";
+
+    // Display 1 or many images based on bool value of multiple
+
+    for (const key in imgEntity) {
+        if (imgEntity.hasOwnProperty(key)) {
+            // Create container for image and description
+            let newImgContainer = document.createElement("div");
+            newImgContainer.className = 'gallery_img';
+
+            // Create image and append
+            let newImg = document.createElement("img");
+            newImg.className = 'img-fluid';
+            newImg.src = key;
+            newImgContainer.appendChild(newImg);
+
+            // Create description and append
+            let newDescription = document.createElement("LABEL");
+            newDescription.textContent = imgEntity[key];
+            newImgContainer.appendChild()
+            
+            img_gallery.appendChild(newImgContainer);
+        }
+    }
 }
 
 
