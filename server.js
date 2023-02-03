@@ -9,7 +9,7 @@ const app = express();
 // API middlewares
 const path = require('path');
 const fs = require('fs');
-// const entity = require('./entity.js');
+require('node-api-doc-generator')(app,'hostname',port);
 
 const fileName = './Dropzones.json';
 const dropzoneFile = require(fileName);
@@ -61,7 +61,6 @@ app.post('/postComment/:dzNum', function (req, resp) {
   // With thanks to stack overflow user Seth for information on how to create the writeJSON function https://stackoverflow.com/questions/10685998/how-to-update-a-value-in-a-json-file-and-save-it-through-node-js
   fs.writeFile(fileName, JSON.stringify(dropzoneFile, null, 4), function writeJSON(err) {
     if (err) return console.log(err);
-    console.log('writing ' + dropzoneFile.entities[dzNum].comments + ' to: ' + fileName);
   });
 
   resp.send(dropzoneFile.entities[dzNum].comments);
@@ -96,18 +95,13 @@ app.post('/postIMG/:dzNum', function(req, resp) {
   const imgURL = req.body.imgURL;
   const imgDescription = req.body.imgDescription;
 
-  console.log("imgURL & imgDescription: " + imgURL + ' , ' + imgDescription);
-
   // Update .images object with new key:value pair
   let retrievedImages = dropzoneFile.entities[dzNum].images;
   retrievedImages[imgDescription] = imgURL;
   dropzoneFile.entities[dzNum].images = retrievedImages;
 
-  console.log("retrievedImages" + retrievedImages);
-
   fs.writeFile(fileName, JSON.stringify(dropzoneFile, null, 4), function writeJSON(err) {
     if (err) return console.log(err);
-    console.log('writing ' + dropzoneFile.entities[dzNum].images + ' to: ' + fileName);
   });
 
   resp.send(dropzoneFile.entities[dzNum].images);
