@@ -1,10 +1,17 @@
-# progblack-web-dev-coursework-
-This repository will contain my work on the programming black coursework on web development and client-server interaction.
+# 🪂 Skydiving Website  
 
-__Website theme__
+This repository houses is an experiment with client-server interactions, bringing together my love for Skydiving with my passion for web development.
 
-This website will be on the theme of sport skydiving, specifically cool places around the world where you can participate in it.
+---
 
-The website will provide information about a handful of different dropzones in a humorous, light-hearted style. 
+## 🌍 Theme  
+The site celebrates the thrill of **sport skydiving**, spotlighting some of the most breathtaking dropzones across the globe.  
 
-Users of the website will be able to comment on their experience at these dropzones. The idea is to create the begginings of a community on which advice is traded and meetups are arranged between fellow skydivers.
+---
+
+## 💡 About the Project  
+Designed with a **humorous and light-hearted tone**, the website showcases a curated selection of skydiving hotspots — each with its own story and sense of adventure.  
+
+But it’s more than just a travel guide — it’s the **start of a community**. Visitors can **share their experiences**, trade **advice**, and even arrange **meetups** with fellow jump enthusiasts.  
+
+Think of it as a digital hangout for those who live for the freefall.  
