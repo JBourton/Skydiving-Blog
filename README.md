@@ -14,4 +14,12 @@ Designed with a **humorous and light-hearted tone**, the website showcases a cur
 
 But it’s more than just a travel guide — it’s the **start of a community**. Visitors can **share their experiences**, trade **advice**, and even arrange **meetups** with fellow jump enthusiasts.  
 
-Think of it as a digital hangout for those who live for the freefall.  
+Think of it as a digital hangout for those who live for the freefall.
+
+---
+
+## 🚀 How to Run
+
+1. Install dependencies: `npm install`
+2. Start the development server: `npm start`
+3. Open your browser to `http://localhost:8080` to explore the app.
